@@ -9,7 +9,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  transition: 1s all ease-in-out !important;
   stroke-dashoffset: 100;
 }
 
@@ -19,12 +18,10 @@
   top: 0;
   position: absolute;
   vertical-align: baseline;
-  transition: 1s all ease !important;
+  transition: 1s all ease-out !important;
 }
 
 .Line__svg svg {
-
-  transition: 1s all ease-in-out !important;
   stroke-width: 1px;
   fill-rule: evenodd;
   fill: none;

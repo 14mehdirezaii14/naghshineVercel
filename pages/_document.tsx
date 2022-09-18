@@ -4,7 +4,7 @@ export default function Document() {
     return (
         <Html className='bg-gray-800'>
             <Head />
-            <body className='container mx-auto' style={{ height: "3000px" }}>
+            <body className='container mx-auto' >
                 <Main />
                 <NextScript />
             </body>

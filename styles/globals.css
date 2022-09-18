@@ -2,11 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    scroll-behavior: smooth !important;
-    behavior: unset;
-}
-
-html {
-    scroll-behavior: smooth !important;
-}
