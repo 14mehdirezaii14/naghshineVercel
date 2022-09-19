@@ -1,7 +1,7 @@
-import { FunctionComponent } from "react"
+import { useEffect, useState, useRef, FunctionComponent } from "react"
 import styles from './Line.module.css'
 import { gsap } from 'gsap/dist/gsap'
-import { useEffect, useState, useRef } from "react"
+
 
 const Line: any = () => {
     const [count, setCount] = useState(0);
@@ -23,8 +23,6 @@ const Line: any = () => {
         }
         setLastScroll(window.scrollY)
     }
-
-
     useEffect(() => {
         document.addEventListener("scroll", scrollEvent);
 
