@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, FunctionComponent } from "react"
+import { useEffect, useState, useRef, FunctionComponent, useCallback } from "react"
 import styles from './Line.module.css'
 import { gsap } from 'gsap/dist/gsap'
 
@@ -8,7 +8,7 @@ const Line: FunctionComponent = () => {
     const [lastScroll, setLastScroll] = useState(0)
     const lineElement = useRef<HTMLHeadingElement>(null)
 
-    const scrollEvent = () => {
+    const scrollEvent = useCallback(() => {
 
         const allHeightPage = window.innerHeight + window.scrollY
         const st = window.pageYOffset || document.documentElement.scrollTop;
@@ -31,7 +31,7 @@ const Line: FunctionComponent = () => {
         }
 
         setLastScroll(window.scrollY)
-    }
+    }, [])
     useEffect(() => {
         document.addEventListener("scroll", scrollEvent);
         return () => {
