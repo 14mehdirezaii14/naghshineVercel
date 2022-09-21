@@ -13,11 +13,15 @@ export function reportWebVitals(metric: NextWebVitalsMetric) {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <>
-    <NavBar />
-    <Line />
-    <Component {...pageProps} />
-  </>
+  return (
+    <>
+      <NavBar />
+      <Line />
+      <div className=' z-10'>
+        <Component  {...pageProps} />
+      </div>
+    </>
+  )
 }
 
 export default MyApp

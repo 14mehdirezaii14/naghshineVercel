@@ -11,17 +11,17 @@ const Line: FunctionComponent = () => {
     const scrollEvent = useCallback(() => {
 
         const allHeightPage = window.innerHeight + window.scrollY
-        const st = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         if (allHeightPage === document.body.offsetHeight) {
             gsap.to(lineElement.current, { height: '100%' })
         }
 
-        else if (st > lastScroll) {
-            gsap.to(lineElement.current, { height: '216px' })
-            setCount(-st)
+        else if (scrollTop > lastScroll) {
+            gsap.to(lineElement.current, { height: '400px' })
+            setCount(-scrollTop)
         }
 
-        else if (st <= 50) {
+        else if (scrollTop <= 50) {
             setCount(0)
             gsap.to(lineElement.current, { height: '0px' })
         }
@@ -39,7 +39,7 @@ const Line: FunctionComponent = () => {
         };
     }, [count])
     return (
-        <div className={styles.Line} ref={lineElement}>
+        <div className={`${styles.Line} z-0`} ref={lineElement}>
             <div className={styles.Line__svg} style={{ transform: `matrix(1, 0, 0, 1, 0, ${count})` }} >
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1064 4569">
