@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { NextWebVitalsMetric } from 'next/app'
 import dynamic from 'next/dynamic'
 
-const Line = dynamic(() => import('../components/line/Line'), {
+const Line = dynamic(() => import('../components/Line/Line'), {
   ssr: false
 })
 const NavBar = dynamic(() => import('../components/navBar/NavBar'))

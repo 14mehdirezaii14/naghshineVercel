@@ -6,19 +6,15 @@ import Link from "next/link"
 import styles from './navBar.module.css'
 import { listItemNav } from './listItemNav'
 const NavBar: FunctionComponent<{}> = () => {
-    const navElement = useRef(null)
-    const scrollEvent = () => {
+    const navElement = useRef<HTMLHeadingElement>(null)
+    const scrollEventNavBar = () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > 50) {
-            gsap.to(navElement.current, { opacity: '1' })
-        } else {
-            gsap.to(navElement.current, { opacity: '0' })
-        }
+        scrollTop > 10 ? gsap.to(navElement.current, { opacity: '1' }) : gsap.to(navElement.current, { opacity: '0' })
     }
     useEffect(() => {
-        document.addEventListener("scroll", scrollEvent);
+        document.addEventListener("scroll", scrollEventNavBar);
         return () => {
-            window.removeEventListener("scroll", scrollEvent);
+            window.removeEventListener("scroll", scrollEventNavBar);
         };
     }, [])
     return (

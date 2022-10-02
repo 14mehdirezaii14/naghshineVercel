@@ -9,7 +9,6 @@ const Line: FunctionComponent = () => {
     const lineElement = useRef<HTMLHeadingElement>(null)
 
     const scrollEvent = useCallback(() => {
-
         const allHeightPage = window.innerHeight + window.scrollY
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         if (allHeightPage === document.body.offsetHeight) {
