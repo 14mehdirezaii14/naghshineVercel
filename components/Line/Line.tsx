@@ -38,7 +38,7 @@ const Line: FunctionComponent = () => {
         };
     }, [count])
     return (
-        <div className={`${styles.Line} z-0`} ref={lineElement}>
+        <div className={`${styles.Line} -z-10`} ref={lineElement}>
             <div className={styles.Line__svg} style={{ transform: `matrix(1, 0, 0, 1, 0, ${count})` }} >
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1064 4569">
