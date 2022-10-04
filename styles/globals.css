@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "BebasNeue";
+    src: url("../assets/fonts/BebasNeue/BebasNeue-Regular_70625156a0eff12853108ce4ed56e09a.ttf")
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}

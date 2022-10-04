@@ -1,0 +1,37 @@
+.itemNav {
+    direction: rtl;
+}
+
+.itemNav:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.itemNav>a {
+    position: relative;
+}
+
+.itemNav>a::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #000;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.itemNav>a:hover::after {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
+}

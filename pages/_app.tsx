@@ -3,17 +3,39 @@ import type { AppProps } from 'next/app'
 import { NextWebVitalsMetric } from 'next/app'
 import dynamic from 'next/dynamic'
 
-const Line = dynamic(() => import('../components/Line/Line'))
+import { useEffect } from 'react'
+import gsap from 'gsap'
+
+const Line = dynamic(() => import('../components/Line/Line'), {
+  ssr: false
+})
+const NavBar = dynamic(() => import('../components/navBar/NavBar'))
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   console.log(metric)
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <>
-    <Line />
-    <Component {...pageProps} />
-  </>
+  useEffect(() => {
+    gsap.fromTo(".Component", {
+      y: 200,
+      opacity: 0
+    }, {
+      y: 0,
+      top: 0,
+      duration: 1,
+      opacity: 1
+    });
+  }, [])
+  return (
+    <>
+      <NavBar />
+      <Line />
+      <div className='Component z-10'>
+        <Component  {...pageProps} />
+      </div>
+    </>
+  )
 }
 
 export default MyApp
