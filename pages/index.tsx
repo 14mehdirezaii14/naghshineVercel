@@ -31,17 +31,14 @@ const Home: NextPage = () => {
           </h2>
         </div>
         {/*  */}
-        <div className="grid grid-cols-12 ">
-        <div className="col-span-8 relative">
-            <Image src='/download.jpg' loader={loader} lazyRoot={lazyRoot} layout='responsive' height={300} width={800} className='w-100' />
+        <div className="grid grid-cols-12 gap-x-4 items-center ">
+          <div className="col-span-8 relative">
+            <Image src='/download.jpg' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} layout='responsive' height={400} width={800} className='w-100 rounded-md' />
 
           </div>
-          <div className="col-span-4">
-            hello
+          <div className="col-span-4 pl-16">
+            <p className={`text-color-green relative mb-0 subTitle`}>hello</p>
           </div>
-          
-
-
         </div>
       </div>
     </div>

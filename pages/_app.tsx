@@ -18,7 +18,6 @@ export function reportWebVitals(metric: NextWebVitalsMetric) {
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     gsap.fromTo(".Component", {
-      y: 200,
       opacity: 0
     }, {
       y: 0,
@@ -31,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <NavBar />
       <Line />
-      <div className='Component z-10'>
+      <div className='Component'>
         <Component  {...pageProps} />
       </div>
     </>

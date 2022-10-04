@@ -2,11 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    .text-color-green {
+        color: #41f3b7
+    }
+}
+
 @font-face {
     font-family: "BebasNeue";
     src: url("../assets/fonts/BebasNeue/BebasNeue-Regular_70625156a0eff12853108ce4ed56e09a.ttf")
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: BebasNeue;
+    text-transform: uppercase;
+    font-family: BebasNeue;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.subTitle {
+    position: relative;
+    color: #41f3b7;
+    font-family: BebasNeue;
+    font-size: 30px !important;
+    text-transform: uppercase;
+    font-weight: 400 !important;
+    letter-spacing: .1em;
+}
+
+.subTitle::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    background-color: #41f3b7;
+    top: 20px;
+    height: 2px;
+    left: -115px;
+    width: 100px;
 }

@@ -18,7 +18,7 @@
   top: 0;
   position: absolute;
   vertical-align: baseline;
-  transition: 1s all ease-out !important;
+  transition: 0.5s all ease-out !important;
 }
 
 .Line__svg svg {
