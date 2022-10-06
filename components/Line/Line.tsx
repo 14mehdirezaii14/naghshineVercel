@@ -9,10 +9,16 @@ const Line: FunctionComponent = () => {
 
     const scrollEvent = useCallback(() => {
         const scrollY = window.scrollY
+        const allHeightPage = window.innerHeight + window.scrollY
         setCount(scrollY)
-        if (scrollY <= 50) {
+        if (scrollY < 50) {
             gsap.to(lineElement.current, { height: '0px' })
-        } else {
+        }
+        else if (allHeightPage === document.body.offsetHeight) {
+
+            gsap.to(lineElement.current, { height: '100%' })
+        }
+        else {
             gsap.to(lineElement.current, { height: '400px' })
         }
     }, [])

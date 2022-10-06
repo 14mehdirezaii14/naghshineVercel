@@ -46,3 +46,39 @@ body {
     left: -115px;
     width: 100px;
 }
+
+.hoverScale {
+    transition: .5s all ease-out;
+}
+
+.hoverScale:hover {
+    transform: scale(1.1);
+}
+
+.infoTitle {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.btnGreen {
+    overflow: hidden;
+    background: #3dec9d;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: BebasNeue;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    transition: color .5s, background .5s;
+    border: 1px solid #3dec9d;
+    letter-spacing: .05em;
+    cursor: pointer;
+    padding: 0 15px;
+    line-height: 1.3em;
+    font-size: 23px;
+}
+
+.btnGreen:hover {
+    background: none;
+    color: black;
+}

@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 import { useRef } from 'react'
 const SvgLogo = dynamic(() => import('../components/svgLogo/SvgLogo'))
 
@@ -32,12 +33,24 @@ const Home: NextPage = () => {
         </div>
         {/*  */}
         <div className="grid grid-cols-12 gap-x-4 items-center ">
-          <div className="col-span-8 relative">
-            <Image src='/download.jpg' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} layout='responsive' height={400} width={800} className='w-100 rounded-md' />
-
+          <div className="md:col-span-8 sm:col-span-12 relative">
+            <Link href='/'>
+              <a>
+                <Image src='/download.jpg' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} layout='responsive' height={400} width={800} className='hoverScale' />
+              </a>
+            </Link>
           </div>
-          <div className="col-span-4 pl-16">
-            <p className={`text-color-green relative mb-0 subTitle`}>hello</p>
+          <div className="md:col-span-4 pl-16 sm:col-span-12">
+            <Link href='/'>
+              <a>
+                <p className={`text-color-green relative mb-0 subTitle`}>hello</p>
+                <p className='infoTitle'>
+                  From Montreal to Lille, France. A creative leap over the Atlantic.</p>
+              </a>
+            </Link>
+            <Link href='/'>
+            <a className='btnGreen'>View Project</a>
+            </Link>
           </div>
         </div>
       </div>
