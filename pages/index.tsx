@@ -141,7 +141,7 @@ const Home: NextPage = () => {
           <div className="container mx-auto">
             <div className="grid gap-6 grid-cols-3 relative">
               <div className='colSectionBlog '>
-                <Image className='imgSectionBlog' onMouseOver={(e) => { e.stopPropagation() }} src={'/blog.jpg'} width={500} height={500} />
+                <Image className='imgSectionBlog' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
                 <div className='p-3 relaive textColSectionBlog'>
                   <p className='text-color-green subTitleSectionBlog subTitleBrfore'>
                     4th of October 2022</p>
@@ -151,7 +151,7 @@ const Home: NextPage = () => {
               </div>
               {/*  */}
               <div className='colSectionBlog '>
-                <Image className='imgSectionBlog' src={'/blog.jpg'} width={500} height={500} />
+                <Image className='imgSectionBlog' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
                 <div className='p-3 relaive textColSectionBlog'>
                   <p className='text-color-green subTitleSectionBlog subTitleBrfore'>
                     4th of October 2022</p>
@@ -161,7 +161,7 @@ const Home: NextPage = () => {
               </div>
               {/*  */}
               <div className='colSectionBlog '>
-                <Image className='imgSectionBlog' src={'/blog.jpg'} width={500} height={500} />
+                <Image className='imgSectionBlog' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
                 <div className='p-3 relaive textColSectionBlog'>
                   <p className='text-color-green subTitleSectionBlog subTitleBrfore'>
                     4th of October 2022</p>
@@ -169,6 +169,7 @@ const Home: NextPage = () => {
                     Gen Z in Canada - A Starting Point  For A Dialogue. </p>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
