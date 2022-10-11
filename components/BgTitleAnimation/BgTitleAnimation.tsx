@@ -5,15 +5,11 @@ const BgTitleAnimation = ({ keyUnique, words }: any) => {
     const [count, setCount] = useState<number>(0)
     const [wordsTotal, setWordsTotal] = useState(words)
     useEffect(() => {
-        console.log(words[words.length - 2])
-        console.log(keyUnique)
         document.addEventListener("scroll", () => {
             const lazyRootTop = ref.current?.getBoundingClientRect()
             if (lazyRootTop) {
-                console.log(lazyRootTop.top)
                 // lazyRootTop.top - 150
                 if (lazyRootTop.top > 350) {
-                    console.log('16')
                     for (let n = 0; n < words.length; n++) {
                         gsap.to(`.${words[n]}${keyUnique}${keyUnique}`, {
                             opacity: `0.01`,

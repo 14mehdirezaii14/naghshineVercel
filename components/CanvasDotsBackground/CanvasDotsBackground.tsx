@@ -1,7 +1,10 @@
-import { FunctionComponent, useEffect } from "react"
+import { FunctionComponent, useEffect, useState, } from "react"
 const CanvasDotsBackground = (props: any) => {
+    const [widthPage, setWidthPage] = useState<number>(0)
     useEffect(() => {
-        const width = 2100;
+        console.log(window.outerWidth)
+        setWidthPage(window.outerWidth + 1000)
+        const width = window.outerWidth + 1000;
         const height = 1100;
         const count = 80;
         const rowsize = 50;
@@ -18,7 +21,7 @@ const CanvasDotsBackground = (props: any) => {
             ctx.canvas.width = width;
             ctx.canvas.height = height;
             mouseOver(canvas, ctx, false)
-            
+
             section.addEventListener('mousemove', function () { mouseOver(canvas, ctx, true); });
             section.addEventListener('mouseleave', function () { mouseOver(canvas, ctx, false); });
         });
@@ -78,7 +81,7 @@ const CanvasDotsBackground = (props: any) => {
     return (
         <canvas className="CanvasDots absolute -left-40 -top-32 w-full " style={{
             left: '-128px',
-            width: '1470px',
+            width: `1470px`,
         }}>
             hello
         </canvas>
