@@ -27,7 +27,7 @@ const Line: FunctionComponent = () => {
     useEffect(() => {
         document.addEventListener("scroll", scrollEvent);
         return () => {
-            window.removeEventListener("scroll", scrollEvent);
+            document.removeEventListener("scroll", scrollEvent);
         };
     }, [])
 

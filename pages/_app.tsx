@@ -17,14 +17,15 @@ export function reportWebVitals(metric: NextWebVitalsMetric) {
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    gsap.fromTo(".Component", {
-      opacity: 0
-    }, {
-      y: 0,
-      top: 0,
-      duration: 1,
-      opacity: 1
-    });
+    window.scrollTo(0,0)
+    // gsap.fromTo(".Component", {
+    //   opacity: 0
+    // }, {
+    //   y: 0,
+    //   top: 0,
+    //   duration: 1,
+    //   opacity: 1
+    // });
   }, [])
   return (
     <>

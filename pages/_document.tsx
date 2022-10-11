@@ -2,9 +2,9 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
     return (
-        <Html>
+        <Html >
             <Head />
-            <body className='container mx-auto' >
+            <body className='' >
                 <Main />
                 <NextScript />
             </body>
