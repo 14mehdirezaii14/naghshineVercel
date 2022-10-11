@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import gsap from 'gsap'
 import { useEffect, useRef } from 'react'
 const SvgLogo = dynamic(() => import('../components/svgLogo/SvgLogo'))
 const BgTitleAnimation = dynamic(() => import('../components/BgTitleAnimation/BgTitleAnimation'))
@@ -15,6 +16,41 @@ const loader = ({ src }: { src: string }) => {
 
 const Home: NextPage = () => {
   const lazyRoot = useRef<HTMLHeadingElement>(null)
+  const videoColumnRef = useRef<HTMLDivElement>(null)
+  const rowRef1 = useRef<HTMLDivElement>(null)
+  const scrollEvent = () => {
+    if (videoColumnRef?.current?.getBoundingClientRect().top) {
+      if (videoColumnRef?.current?.getBoundingClientRect().top < 600) {
+        gsap.to(videoColumnRef.current, { zIndex: 10, opacity: 1, top: 0, duration: 0.5 });
+      } else {
+        gsap.to(videoColumnRef.current, { opacity: 0, top: 200, duration: 0.5 });
+      }
+    }
+    if (rowRef1.current?.getBoundingClientRect().top) {
+      if (rowRef1.current.getBoundingClientRect().top < 600) {
+        gsap.to(rowRef1.current, { zIndex: 10, opacity: 1, top: 0, duration: 0.5 });
+      } else {
+        gsap.to(rowRef1.current, { opacity: 0, top: 200, duration: 0.5 });
+      }
+    }
+  }
+  // var handleScroll = function (e: any) {
+  //   e.preventDefault()
+  //   console.log(window.scrollY)
+  //   let delta:any = 0;
+  //   if (e.wheelDelta) { (delta = -e.wheelDelta / 120); }
+  //   console.log(delta)
+  //   window.scrollTo(500,0)
+  // };
+  useEffect(() => {
+    document.addEventListener("scroll", scrollEvent);
+
+    // window.addEventListener('DOMMouseScroll', handleScroll, {passive:false}); // for Firefox
+    // window.addEventListener('mousewheel', handleScroll, {passive:false}); // for everyone else
+    return () => {
+      document.removeEventListener("scroll", scrollEvent);
+    };
+  }, [])
   return (
     <div className={styles.container}>
       <Head>
@@ -22,10 +58,10 @@ const Home: NextPage = () => {
         <meta name="description" content="Home Page naghshineh" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='container mx-auto py-5'>
+      <div className='container z-50 mx-auto py-5'>
         {/* head */}
         <SvgLogo />
-        <div className={`text-center ${styles.HeaderHomeTitle} relative -top-80 md:mb-0 sx:-mb-80 text-center`}>
+        <div className={`text-center z-30 ${styles.HeaderHomeTitle} relative -top-80 md:mb-0 sx:-mb-80 text-center`}>
           <h1 className='HeaderHomeLine1'>
             CONNECTING
           </h1>
@@ -58,7 +94,7 @@ const Home: NextPage = () => {
         {/*  */}
         <BgTitleAnimation keyUnique={'1'} words={['C', 'R', 'E', 'A', 'T', 'I', 'V', 'E']} />
         {/* video column */}
-        <div className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-4 items-center ">
+        <div ref={videoColumnRef} className="grid relative sm:grid-cols-1 md:grid-cols-12 gap-x-4 items-center ">
 
           <div className="md:col-span-4 pr-16 sm:col-span-12 text-right">
             <Link href='/'>
@@ -76,11 +112,11 @@ const Home: NextPage = () => {
         </div>
         {/*  */}
         <BgTitleAnimation keyUnique={'2'} words={['a', 'c', 't', 'i', 'v', 'a', 't', 'i', 'o', 'n']} />
-        <div className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-4 items-center ">
+        <div ref={rowRef1} className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-4 items-center ">
           <div className="md:col-span-8 sm:col-span-12 relative" >
             <Link href='/'>
               <a>
-                <Image src='/download.jpg' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} height={400} width={800} className='hoverScale' />
+                <Image src='/download.jpg' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} height={400} width={800} className='hoverScale z-20' />
               </a>
             </Link>
           </div>
@@ -93,32 +129,32 @@ const Home: NextPage = () => {
               </a>
             </Link>
             <Link href='/' >
-              <a className='btnGreen' >View Project</a>
+              <a className='btnGreen  z-50' >View Project</a>
             </Link>
           </div>
         </div>
         {/*  */}
         <div className="grid grid-cols-1 text-center justify-center">
           <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} />
-          <div>
+          <div className='z-40'>
             <Link href='/' >
-              <a className='btnGreen inline-block' >View Project</a>
+              <a className='btnGreen inline-block  ' >View Project</a>
             </Link>
           </div>
         </div>
         {/*  */}
 
       </div>
-      <div className=' relative sectionBlog' style={{
+      <div className='  relative sectionBlog' style={{
         background: '#1d1d20',
         color: 'black !important'
       }} >
-        <div className=" absolute  bottom-0 right-0 top-0 left-0  " style={{
+        <div className=" absolute z-0  bottom-0 right-0 top-0 left-0  " style={{
 
         }} >
           <CanvasDotsBackground />
         </div>
-        <div className='container mx-auto  relative' >
+        <div className='container z-20 mx-auto  relative' >
           <BgTitleAnimation keyUnique={'4'} words={['b', 'l', 'o', 'g']} />
           <div className='text-white relative -top-20 text-center  grid grid-cols-12 -mb-16'>
             <div className='col-span-4' ><p className='text-left' style={{

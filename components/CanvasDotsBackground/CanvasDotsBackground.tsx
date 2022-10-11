@@ -3,8 +3,8 @@ const CanvasDotsBackground = (props: any) => {
     const [widthPage, setWidthPage] = useState<number>(0)
     useEffect(() => {
         console.log(window.outerWidth)
-        setWidthPage(window.outerWidth + 1000)
-        const width = window.outerWidth + 1000;
+        setWidthPage(window.outerWidth + 500)
+        const width = window.outerWidth + 500;
         const height = 1100;
         const count = 80;
         const rowsize = 50;
@@ -35,8 +35,8 @@ const CanvasDotsBackground = (props: any) => {
                 PosY = -50;
             }
 
-            let LocX = canvas.getBoundingClientRect().left - 350;
-            let LocY = canvas.getBoundingClientRect().top - 350;
+            let LocX = canvas.getBoundingClientRect().left - 100;
+            let LocY = canvas.getBoundingClientRect().top - 100;
 
             let GlobalX = PosX - LocX;
             let GlobalY = PosY - LocY;
@@ -55,7 +55,7 @@ const CanvasDotsBackground = (props: any) => {
                     if (dotsize < dotmin) {
                         dotsize = 1;
                     }
-                    ctx.arc(rowsize * $ix, rowsize * $iy, dotsize, 0, 100 * Math.PI);
+                    ctx.arc(rowsize * $ix, rowsize * $iy, dotsize, 0, 50 * Math.PI);
                     $counter = $counter;
                     ctx.strokeStyle = "#41f3b7";
 
@@ -79,9 +79,9 @@ const CanvasDotsBackground = (props: any) => {
         }
     }, [])
     return (
-        <canvas className="CanvasDots absolute -left-40 -top-32 w-full " style={{
-            left: '-128px',
-            width: `1470px`,
+        <canvas className="CanvasDots absolute z-0 -left-40 -top-32 w-full " style={{
+            left: '-328px',
+            width: `${widthPage}px`,
         }}>
             hello
         </canvas>

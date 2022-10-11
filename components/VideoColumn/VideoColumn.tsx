@@ -4,7 +4,7 @@ import { FaPlay } from "react-icons/fa";
 const VideoColumn = ({ img }: any) => {
 
     return (
-        <div className="md:col-span-8  shadow-md shadow-black overflow-hidden sm:col-span-12 relative cursor-pointer">
+        <div className="md:col-span-8 z-20  shadow-md shadow-black overflow-hidden sm:col-span-12 relative cursor-pointer">
             <div className="hoverScale  flex items-center justify-center align-middle" style={{
                 backgroundImage:
                     `url(${img})`, width: '100%', backgroundSize: 'cover',
