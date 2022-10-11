@@ -133,7 +133,7 @@ const Home: NextPage = () => {
               <p className='text-left' style={{
                 fontWeight: 400
 
-              }}>What's going on at Bite Size, you ask?
+              }}>Whats going on at Bite Size, you ask?
                 <br />
                 Well, here are some of the stories our team is proud to share with the world.</p>
             </div>
