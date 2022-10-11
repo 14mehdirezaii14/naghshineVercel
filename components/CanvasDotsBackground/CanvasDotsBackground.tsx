@@ -10,7 +10,7 @@ const CanvasDotsBackground = (props: any) => {
         const dotsizebase = 10;
         let PosX: any = ''
         let PosY: any = ''
-        // Calc
+        // Calc 
         var canvases = document.querySelectorAll(".CanvasDots");
         let section = document.getElementsByClassName('sectionBlog')[0]
         canvases.forEach((canvas: any) => {
