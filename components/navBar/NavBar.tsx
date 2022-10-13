@@ -18,7 +18,7 @@ const NavBar: FunctionComponent<{}> = () => {
         };
     }, [])
     return (
-        <div ref={navElement} className="shadow-md  py-2 z-50     fixed top-0 opacity-0 left-0 right-0 z-20 bg-white">
+        <div ref={navElement} className="shadow-md  py-2 z-50     fixed top-0 opacity-0 left-0 right-0 bg-white">
             <div className="container mx-auto">
                 {/* logo */}
                 <div className="float-left">

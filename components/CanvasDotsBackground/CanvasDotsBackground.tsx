@@ -5,7 +5,7 @@ const CanvasDotsBackground = (props: any) => {
         console.log(window.outerWidth)
         setWidthPage(window.outerWidth + 500)
         const width = window.outerWidth + 500;
-        const height = 1100;
+        const height = window.outerHeight + 1600;
         const count = 80;
         const rowsize = 50;
         let dotsize: any = 1;
@@ -79,11 +79,10 @@ const CanvasDotsBackground = (props: any) => {
         }
     }, [])
     return (
-        <canvas className="CanvasDots absolute z-0 -left-40 -top-32 w-full " style={{
+        <canvas className="CanvasDots absolute z-0 -left-40 -top-36 w-full " style={{
             left: '-328px',
             width: `${widthPage}px`,
         }}>
-            hello
         </canvas>
     )
 

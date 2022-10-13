@@ -61,8 +61,8 @@ const Home: NextPage = () => {
       <div className='container z-50 mx-auto py-5'>
         {/* head */}
         <SvgLogo />
-        <div className={`text-center z-30 ${styles.HeaderHomeTitle} relative -top-80 md:mb-0 sx:-mb-80 text-center`}>
-          <h1 className='HeaderHomeLine1'>
+        <div className={`text-center z-30 ${styles.HeaderHomeTitle} relative -top-80 md:mb-0 sx:-mb-56 text-center`}>
+          <h1 className={`${styles.HeaderHomeLine1}`}>
             CONNECTING
           </h1>
           <h2 className={`${styles.HeaderHomeLine2}`}>
@@ -70,11 +70,13 @@ const Home: NextPage = () => {
           </h2>
         </div>
         {/*  */}
-        <div className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-4 items-center ">
-          <div className="md:col-span-8 sm:col-span-12 relative" >
+        <div className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-12 z-30  items-center ">
+          <div className="md:col-span-8 sm:col-span-12 relative text-right z-30" >
             <Link href='/'>
               <a>
-                <Image src='/download.jpg' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} height={400} width={800} className='hoverScale' />
+                <div className="divImg">
+                  <Image src='/download.jpg' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} height={400} width={800} className='hoverScale right-0 bg-gray-500 w-full block' />
+                </div>
               </a>
             </Link>
           </div>
@@ -87,19 +89,19 @@ const Home: NextPage = () => {
               </a>
             </Link>
             <Link href='/' >
-              <a className='btnGreen' >View Project</a>
+              <a className='btnGreen ' >View Project</a>
             </Link>
           </div>
         </div>
         {/*  */}
         <BgTitleAnimation keyUnique={'1'} words={['C', 'R', 'E', 'A', 'T', 'I', 'V', 'E']} />
         {/* video column */}
-        <div ref={videoColumnRef} className="grid relative sm:grid-cols-1 md:grid-cols-12 gap-x-4 items-center ">
+        <div ref={videoColumnRef} className="grid relative sm:grid-cols-1 md:grid-cols-12 gap-x-12 items-center ">
 
-          <div className="md:col-span-4 pr-16 sm:col-span-12 text-right">
+          <div className="md:col-span-4 md:order-1 sx:order-2  sm:col-span-12 text-right">
             <Link href='/'>
-              <a>
-                <p className={`text-color-green relative mb-0 subTitle subTitleAfter `}>hello</p>
+              <a className='relative'>
+                <p className={`text-color-green  relative mb-0 subTitle subTitleAfter `}>hello</p>
                 <p className='infoTitle'>
                   From Montreal to Lille, France. A creative leap over the Atlantic.</p>
               </a>
@@ -112,11 +114,13 @@ const Home: NextPage = () => {
         </div>
         {/*  */}
         <BgTitleAnimation keyUnique={'2'} words={['a', 'c', 't', 'i', 'v', 'a', 't', 'i', 'o', 'n']} />
-        <div ref={rowRef1} className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-4 items-center ">
+        <div ref={rowRef1} className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-12 items-center ">
           <div className="md:col-span-8 sm:col-span-12 relative" >
             <Link href='/'>
               <a>
-                <Image src='/download.jpg' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} height={400} width={800} className='hoverScale z-20' />
+                <div className="divImg">
+                  <Image src='/download.jpg' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} height={400} width={800} className='hoverScale right-0 bg-gray-500 z-30 w-full block' />
+                </div>
               </a>
             </Link>
           </div>
@@ -138,7 +142,7 @@ const Home: NextPage = () => {
           <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} />
           <div className='z-40'>
             <Link href='/' >
-              <a className='btnGreen inline-block  ' >View Project</a>
+              <a className='btnGreen inline  ' >View Project</a>
             </Link>
           </div>
         </div>
@@ -156,8 +160,8 @@ const Home: NextPage = () => {
         </div>
         <div className='container z-20 mx-auto  relative' >
           <BgTitleAnimation keyUnique={'4'} words={['b', 'l', 'o', 'g']} />
-          <div className='text-white relative -top-20 text-center  grid grid-cols-12 -mb-16'>
-            <div className='col-span-4' ><p className='text-left' style={{
+          <div className='text-white relative md:-top-20 sx:top-0 text-center  grid grid-cols-12 -mb-16'>
+            <div className='md:col-span-4 sx:col-span-12 ' ><p className='text-left' style={{
               position: 'relative',
               fontSize: '35px',
               textTransform: 'uppercase',
@@ -165,7 +169,7 @@ const Home: NextPage = () => {
               letterSpacing: '.06em',
 
             }}>BREAKING NEWS</p></div>
-            <div className="col-span-8">
+            <div className="md:col-span-8 sx:col-span-12">
               <p className='text-left' style={{
                 fontWeight: 400
 
@@ -174,8 +178,8 @@ const Home: NextPage = () => {
                 Well, here are some of the stories our team is proud to share with the world.</p>
             </div>
           </div>
-          <div className="container mx-auto">
-            <div className="grid gap-6 grid-cols-3 relative">
+          <div className="container mx-auto md:mt-0 sx:mt-20">
+            <div className="grid gap-6 md:grid-cols-3 sx:grid-cols-1  relative">
               <div className='colSectionBlog '>
                 <Image className='imgSectionBlog' loader={loader} blurDataURL="blur" lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
                 <div className='p-3 relaive textColSectionBlog'>
