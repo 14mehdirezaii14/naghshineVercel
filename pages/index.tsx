@@ -94,7 +94,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         {/*  */}
-        <BgTitleAnimation keyUnique={'1'} words={['C', 'R', 'E', 'A', 'T', 'I', 'V', 'E']} />
+        <BgTitleAnimation keyUnique={'1'} words={['C', 'R', 'E', 'A', 'T', 'I', 'V', 'E']} dir={'ltr'} />
         {/* video column */}
         <div ref={videoColumnRef} className="grid relative sm:grid-cols-1 md:grid-cols-12 gap-x-12 items-center ">
 
@@ -113,7 +113,7 @@ const Home: NextPage = () => {
           <VideoColumn img={'https://i.vimeocdn.com/video/780757293-1c2ac502d89b659935c76cc89a7e76bc175c7276baa487b4d130bea6c11d50bb-d_1280'} />
         </div>
         {/*  */}
-        <BgTitleAnimation keyUnique={'2'} words={['a', 'c', 't', 'i', 'v', 'a', 't', 'i', 'o', 'n']} />
+        <BgTitleAnimation keyUnique={'2'} words={['a', 'c', 't', 'i', 'v', 'a', 't', 'i', 'o', 'n']} dir={'rtl'} />
         <div ref={rowRef1} className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-12 items-center ">
           <div className="md:col-span-8 sm:col-span-12 relative" >
             <Link href='/'>
@@ -139,7 +139,7 @@ const Home: NextPage = () => {
         </div>
         {/*  */}
         <div className="grid grid-cols-1 text-center justify-center">
-          <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} />
+          <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} dir={'rtl'} />
           <div className='z-40'>
             <Link href='/' >
               <a className='btnGreen inline  ' >View Project</a>
@@ -159,7 +159,7 @@ const Home: NextPage = () => {
           <CanvasDotsBackground />
         </div>
         <div className='container z-20 mx-auto  relative' >
-          <BgTitleAnimation keyUnique={'4'} words={['b', 'l', 'o', 'g']} />
+          <BgTitleAnimation keyUnique={'4'} words={['b', 'l', 'o', 'g']} dir={'rtl'} />
           <div className='text-white relative md:-top-20 sx:top-0 text-center  grid grid-cols-12 -mb-16'>
             <div className='md:col-span-4 sx:col-span-12 ' ><p className='text-left' style={{
               position: 'relative',

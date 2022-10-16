@@ -7,7 +7,7 @@ const VideoColumn = ({ img }: any) => {
     const [showModal, setShowModal] = useState(false);
     return (
         <>
-            <div onClick={() => setShowModal(true)} className=" md:col-span-8 z-20 md:order-2 sx:order-1  shadow-md shadow-black overflow-hidden sm:col-span-12 relative cursor-pointer">
+            <div onClick={() => setShowModal(true)} className=" md:col-span-8 z-50   md:order-2 sx:order-1  shadow-md shadow-black overflow-hidden sm:col-span-12 relative cursor-pointer">
                 <div className="hoverScale  flex items-center justify-center align-middle" style={{
                     backgroundColor: "black",
                     backgroundImage:
