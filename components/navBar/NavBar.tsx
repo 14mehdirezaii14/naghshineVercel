@@ -41,7 +41,7 @@ const NavBar: FunctionComponent<{}> = () => {
                 <div className="container mx-auto">
                     {/* logo */}
                     <div className="float-left">
-                        <Image priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
+                        <Image  priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
                     </div>
                     {/* item nav */}
                     <div className={` ${styles.itemNav} items-center pt-3 sx:hidden md:flex`}>
