@@ -5,8 +5,11 @@ import { gsap } from 'gsap/dist/gsap'
 import Link from "next/link"
 import styles from './navBar.module.css'
 import { listItemNav } from './listItemNav'
+import { FiMenu } from "react-icons/fi";
+
 const NavBar: FunctionComponent<{}> = () => {
     const navElement = useRef<HTMLHeadingElement>(null)
+    const navSx = useRef<HTMLHeadingElement>(null)
     const scrollEventNavBar = () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         scrollTop > 10 ? gsap.to(navElement.current, { opacity: '1' }) : gsap.to(navElement.current, { opacity: '0' })
@@ -17,25 +20,56 @@ const NavBar: FunctionComponent<{}> = () => {
             window.removeEventListener("scroll", scrollEventNavBar);
         };
     }, [])
+    // 
+    const clickMenu = () => {
+        let right = navSx.current?.style.right
+        console.log('click')
+        console.log(navSx.current?.style.right)
+        right !== "0px" ? gsap.to(navSx.current, { right: 0, duration: 0.5 }) : gsap.to(navSx.current, { right: -300, duration: 0.5 })
+    }
     return (
-        <div ref={navElement} className="shadow-md  py-2 z-50     fixed top-0 opacity-0 left-0 right-0 bg-white">
-            <div className="container mx-auto">
-                {/* logo */}
-                <div className="float-left">
-                    <Image priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
+        <>
+            <div ref={navElement} className=" fixed shadow-md  py-2 z-50  top-0 opacity-0 left-0 right-0 bg-white">
+                <div className="container mx-auto">
+                    {/* logo */}
+                    <div className="float-left">
+                        <Image priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
+                    </div>
+                    {/* item nav */}
+                    <div className={` ${styles.itemNav} items-center pt-3 sx:hidden md:flex`}>
+                        {listItemNav.map((item: any, index: any) => {
+                            return (
+                                <Link key={index} href={item.path}><a className="mx-3">
+                                    {item.title}
+                                </a></Link>
+                            )
+                        })}
+                    </div>
+                    {/* sx item nav */}
+                    <div onClick={clickMenu} className={` ${styles.itemNav} items-center pt-3 sx:flex md:hidden`}>
+                        <button className="btn">
+                            <FiMenu size={30} />
+                        </button>
+
+                    </div>
+
                 </div>
-                {/* item nav */}
-                <div className={`flex ${styles.itemNav} items-center pt-3`}>
+
+            </div>
+            <div ref={navSx} className="sx:fixed md:hidden top-14 pt-5 w-2/4 text-right z-50 bg-white shadow-lg h-full -right-80 ">
+                <ul>
                     {listItemNav.map((item: any, index: any) => {
                         return (
-                            <Link key={index} href={item.path}><a className="mx-3">
-                                {item.title}
-                            </a></Link>
+                            <li key={index}>
+                                <Link href={item.path}><a className="mx-3">
+                                    {item.title}
+                                </a></Link>
+                            </li>
                         )
                     })}
-                </div>
+                </ul>
             </div>
-        </div>
+        </>
     )
 }
 
