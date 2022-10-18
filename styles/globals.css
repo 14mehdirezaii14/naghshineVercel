@@ -29,6 +29,7 @@
     * {
         font-size: 20px !important;
     }
+
     .bgTitle>div {
         font-size: 30px !important;
     }
@@ -199,4 +200,25 @@ body {
 
 .divImg>span {
     display: block !important;
+}
+
+.activeSpan {
+    background: transparent !important;
+
+}
+
+.activeSpan::after {
+    top: 5px !important;
+    -webkit-transform: translateY(-6px) rotate(-45deg);
+    -ms-transform: translateY(-6px) rotate(-45deg);
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.activeSpan::before {
+    top: -7px !important;
+    -webkit-transform: translateY(6px) rotate(45deg);
+    -ms-transform: translateY(6px) rotate(45deg);
+    transform: translateY(6px) rotate(45deg);
+
+
 }

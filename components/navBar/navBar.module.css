@@ -35,3 +35,41 @@
     -ms-transform: scaleX(1);
     transform: scaleX(1);
 }
+
+.spanBtnNav{
+    position: absolute;
+    width: 20px;
+    border-radius: 20px;
+    height: 2px;
+    right: 0;
+    background: #000;
+}
+
+.spanBtnNav{
+    transition: 0.5s all ease-out;
+
+}
+
+.spanBtnNav::after{
+    transition: 0.5s all ease-out;
+    content: '';
+    position: absolute;
+    width: 20px;
+    border-radius: 20px;
+    height: 2px;
+    right: 0;
+    background: #000;
+    top: -5px;
+}
+
+.spanBtnNav::before{
+    transition: 0.5s all ease-out;
+    content: '';
+    position: absolute;
+    width: 20px;
+    border-radius: 20px;
+    height: 2px;
+    right: 0;
+    background: #000;
+    top: 5px;
+}
