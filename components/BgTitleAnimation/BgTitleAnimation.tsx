@@ -2,13 +2,10 @@ import { useRef, useEffect, useState } from "react"
 import gsap from "gsap"
 const BgTitleAnimation = ({ keyUnique, words, dir, color = '#000' }: { keyUnique: string, words: string[], dir: string, color?: string }) => {
     const ref = useRef<any>(null)
-    const [count, setCount] = useState<number>(0)
-    const [wordsTotal, setWordsTotal] = useState(words)
     useEffect(() => {
         document.addEventListener("scroll", () => {
             const lazyRootTop = ref.current?.getBoundingClientRect()
             if (lazyRootTop) {
-                // lazyRootTop.top - 150
                 if (lazyRootTop.top > 750) {
                     for (let n = 0; n < words.length; n++) {
                         dir === 'rtl' ? gsap.to(`.${words[n]}${keyUnique}${n}`, {
@@ -22,7 +19,6 @@ const BgTitleAnimation = ({ keyUnique, words, dir, color = '#000' }: { keyUnique
                         },)
                     }
                 }
-
                 else if (lazyRootTop.top < 750) {
                     console.log('27')
                     for (let n = 0; n < words.length; n++) {
@@ -33,13 +29,7 @@ const BgTitleAnimation = ({ keyUnique, words, dir, color = '#000' }: { keyUnique
                             duration: `1`
                         },)
                     }
-
-
-                    // console.log(count)
                 }
-
-
-
             }
         });
     }, [])
@@ -48,7 +38,7 @@ const BgTitleAnimation = ({ keyUnique, words, dir, color = '#000' }: { keyUnique
             {
                 words.map((word: any, index: any) => {
                     return (
-                        <div key={index} className={`relative bgTitle${keyUnique} ${word}${keyUnique}${index} bgTitle `}  >
+                        <div key={index} style={{ transform: 'translate(-2000px, 0px)' }} className={`relative bgTitle${keyUnique} ${word}${keyUnique}${index} bgTitle `}  >
                             {word}
                         </div>
                     )

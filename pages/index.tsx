@@ -62,7 +62,7 @@ const Home: NextPage = () => {
             <Link href='/'>
               <a>
                 <div className="divImg">
-                  <Image placeholder='blur' alt="Logo" src='/download.jpg' blurDataURL="blur" lazyRoot={lazyRoot} height={400} width={800} className='hoverScale right-0 bg-gray-500 w-full block' />
+                  <Image placeholder='blur' alt="Logo" src='/download.jpg' blurDataURL='/download.jpg'  lazyRoot={lazyRoot} height={400} width={800} className='hoverScale right-0 bg-gray-500 w-full block' />
                 </div>
               </a>
             </Link>
@@ -106,7 +106,7 @@ const Home: NextPage = () => {
             <Link href='/'>
               <a>
                 <div className="divImg">
-                  <Image placeholder='blur' alt="Logo" src='/download.jpg' blurDataURL="blur" lazyRoot={lazyRoot} height={400} width={800} className='hoverScale right-0 bg-gray-500 z-30 w-full block' />
+                  <Image placeholder='blur' alt="Logo" src='/download.jpg' blurDataURL='/download.jpg'  lazyRoot={lazyRoot} height={400} width={800} className='hoverScale right-0 bg-gray-500 z-30 w-full block' />
                 </div>
               </a>
             </Link>
@@ -168,7 +168,7 @@ const Home: NextPage = () => {
           <div className="container mx-auto md:mt-0 sx:mt-20">
             <div className="grid gap-6 md:grid-cols-3 sx:grid-cols-1  relative">
               <div className='colSectionBlog '>
-                <Image alt='alt' className='imgSectionBlog' blurDataURL="blur" placeholder='blur' lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
+                <Image alt='alt' className='imgSectionBlog' blurDataURL='/download.jpg'  lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
                 <div className='p-3 relaive textColSectionBlog'>
                   <p className='text-color-green subTitleSectionBlog subTitleBrfore'>
                     4th of October 2022</p>
@@ -178,7 +178,7 @@ const Home: NextPage = () => {
               </div>
               {/*  */}
               <div className='colSectionBlog '>
-                <Image placeholder='blur' alt='alt' className='imgSectionBlog' blurDataURL="blur" lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
+                <Image placeholder='blur' alt='alt' className='imgSectionBlog'blurDataURL='/download.jpg'   lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
                 <div className='p-3 relaive textColSectionBlog'>
                   <p className='text-color-green subTitleSectionBlog subTitleBrfore'>
                     4th of October 2022</p>
@@ -188,7 +188,7 @@ const Home: NextPage = () => {
               </div>
               {/*  */}
               <div className='colSectionBlog '>
-                <Image placeholder='blur' alt='alt' className='imgSectionBlog' blurDataURL="blur" lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
+                <Image placeholder='blur' alt='alt' className='imgSectionBlog' blurDataURL='/download.jpg'  lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
                 <div className='p-3 relaive textColSectionBlog'>
                   <p className='text-color-green subTitleSectionBlog subTitleBrfore'>
                     4th of October 2022</p>
