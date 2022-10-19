@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import { useEffect } from 'react'
 import gsap from 'gsap'
-
+import Loading from '../components/Loading/Loading'
 const Line = dynamic(() => import('../components/Line/Line'), {
   ssr: false
 })
@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     });
   }, [])
   return (
-    <Suspense fallback={'loading ...'}>
+    <Suspense fallback={<Loading/>}>
       <NavBar />
       <Line />
       <div className='Component'>
