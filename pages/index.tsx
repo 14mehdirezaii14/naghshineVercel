@@ -39,13 +39,13 @@ const Home: NextPage = () => {
     };
   }, [])
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>naghshineh</title>
         <meta name="description" content="Home Page naghshineh" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='container z-50 mx-auto py-5'>
+      <div className='container  mx-auto py-5'>
         {/* head */}
         <SvgLogo />
         <div className={`text-center z-30 ${styles.HeaderHomeTitle} relative -top-80 md:mb-0 sx:-mb-56 text-center`}>
@@ -136,16 +136,12 @@ const Home: NextPage = () => {
         {/*  */}
 
       </div>
-      <div className='  relative sectionBlog' style={{
+      <div className='  relative  sectionBlog' style={{
         background: '#1d1d20',
         color: 'black !important'
       }} >
-        <div className=" absolute z-0  bottom-0 right-0 top-0 left-0   overflow-hidden" style={{
-
-        }} >
-          <CanvasDotsBackground />
-        </div>
-        <div className='container z-20 mx-auto  relative' >
+        <div className='container  mx-auto  relative' >
+        <CanvasDotsBackground />
           <BgTitleAnimation keyUnique={'4'} words={['b', 'l', 'o', 'g']} dir={'rtl'} />
           <div className='text-white relative md:-top-20 sx:top-0 text-center  grid grid-cols-12 -mb-16'>
             <div className='md:col-span-4 sx:col-span-12 ' ><p className='text-left' style={{
@@ -201,7 +197,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-    </div >
+    </ >
   )
 }
 

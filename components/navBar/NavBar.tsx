@@ -66,7 +66,7 @@ const NavBar: FunctionComponent<{}> = () => {
             </div>
             {/* navBar sx */}
             <div ref={navSx} className="sx:fixed md:hidden top-14 pt-5 w-2/4 text-right z-50 bg-white shadow-lg h-full -right-80 ">
-                <ul>
+                
                     {listItemNav.map((item: any, index: any) => {
                         return (
                             <li key={index}>
@@ -76,7 +76,7 @@ const NavBar: FunctionComponent<{}> = () => {
                             </li>
                         )
                     })}
-                </ul>
+                
             </div>
         </>
     )
