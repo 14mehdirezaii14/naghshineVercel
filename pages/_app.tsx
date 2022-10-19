@@ -11,13 +11,15 @@ const Line = dynamic(() => import('../components/Line/Line'), {
 })
 const NavBar = dynamic(() => import('../components/navBar/NavBar'))
 
+const Footer = dynamic(() => import('../components/Footer/Footer'))
+
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   console.log(metric)
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
     // gsap.fromTo(".Component", {
     //   opacity: 0
     // }, {
@@ -34,6 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className='Component'>
         <Component  {...pageProps} />
       </div>
+      <Footer />
     </>
   )
 }

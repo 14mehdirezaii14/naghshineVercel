@@ -6,6 +6,10 @@
     .text-color-green {
         color: #41f3b7
     }
+
+    .bgGreen {
+        background-color: #41f3b7;
+    }
 }
 
 @font-face {
@@ -221,4 +225,10 @@ body {
     transform: translateY(6px) rotate(45deg);
 
 
+}
+
+.bgTitle {
+    transition: 0.2s all ease-out;
+    font-size: 150px;
+    letter-spacing: 40px;
 }
