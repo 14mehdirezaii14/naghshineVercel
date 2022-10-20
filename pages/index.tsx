@@ -136,7 +136,7 @@ const Home: NextPage = () => {
         {/*  */}
 
       </div>
-      <div className='  relative  sectionBlog' style={{
+      <div className='  overflow-hidden  sectionBlog' style={{
         background: '#1d1d20',
         color: 'black !important'
       }} >
