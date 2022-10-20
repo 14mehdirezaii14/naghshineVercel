@@ -7,7 +7,7 @@ import Link from 'next/link'
 import gsap from 'gsap'
 import { Suspense, useEffect, useRef } from 'react'
 import Loading from '../components/Loading/Loading'
-const SvgLogo = dynamic(() => import('../components/svgLogo/SvgLogo'), { ssr: false })
+const SvgLogo = dynamic(() => import('../components/svgLogo/SvgLogo'))
 const BgTitleAnimation = dynamic(() => import('../components/BgTitleAnimation/BgTitleAnimation'))
 const VideoColumn = dynamic(() => import('../components/VideoColumn/VideoColumn'))
 const CanvasDotsBackground = dynamic(() => import('../components/CanvasDotsBackground/CanvasDotsBackground'))

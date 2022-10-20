@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     window.scrollTo(0, 0)
     setLoading(true)
+    gsap.fromTo('#__next',{opacity:0},{opacity:1,duration:5})
   }, [])
   return (
     <>

@@ -8,9 +8,7 @@ export default function Document() {
             <Head />
             <body className='' >
                 <Main />
-                <Suspense fallback={<Loading />}>
                     <NextScript />
-                </Suspense>
             </body>
         </Html>
     )
