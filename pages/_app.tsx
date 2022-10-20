@@ -20,9 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.body.addEventListener("load",() => {
-      setLoading(true)
-    })
+    setLoading(true)
   }, [])
   return (
     <>
@@ -32,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <NavBar />
 
           <Line />
-            <Component  {...pageProps} />
+          <Component  {...pageProps} />
           <Footer />
         </> : <Loading />
       }
