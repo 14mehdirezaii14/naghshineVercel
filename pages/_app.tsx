@@ -20,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     window.scrollTo(0, 0)
-    setLoading(true)
+    document.body.addEventListener("load",() => {
+      setLoading(true)
+    })
   }, [])
   return (
     <>
