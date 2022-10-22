@@ -19,14 +19,14 @@ const Home: NextPage = () => {
   const scrollEvent = () => {
     if (videoColumnRef?.current?.getBoundingClientRect().top) {
       if (videoColumnRef?.current?.getBoundingClientRect().top < 600) {
-        gsap.to(videoColumnRef.current, { zIndex: 10, opacity: 1, top: 0, duration: 0.5 });
+        gsap.to(videoColumnRef.current, { opacity: 1, top: 0, duration: 0.5 });
       } else {
         gsap.to(videoColumnRef.current, { opacity: 0, top: 200, duration: 0.5 });
       }
     }
     if (rowRef1.current?.getBoundingClientRect().top) {
       if (rowRef1.current.getBoundingClientRect().top < 600) {
-        gsap.to(rowRef1.current, { zIndex: 10, opacity: 1, top: 0, duration: 0.5 });
+        gsap.to(rowRef1.current, { opacity: 1, top: 0, duration: 0.5 });
       } else {
         gsap.to(rowRef1.current, { opacity: 0, top: 200, duration: 0.5 });
       }
@@ -60,8 +60,8 @@ const Home: NextPage = () => {
           </h2>
         </div>
         {/*  */}
-        <div className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-12 z-30  items-center ">
-          <div className="md:col-span-8 sm:col-span-12 relative text-right z-30" >
+        <div className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-12   items-center ">
+          <div className="md:col-span-8 sm:col-span-12 relative text-right" >
             <Link href='/'>
               <a>
                 <div className="divImg">
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
             <Link href='/'>
               <a>
                 <div className="divImg">
-                  <Image placeholder='blur' alt="Logo" src='/download.jpg' blurDataURL='/download.jpg' lazyRoot={lazyRoot} height={400} width={800} className='hoverScale right-0 bg-gray-500 z-30 w-full block' />
+                  <ImageComponent src='/download.jpg' alt='1' width={800} height={400} className={'hoverScale right-0'} />
                 </div>
               </a>
             </Link>
@@ -123,14 +123,14 @@ const Home: NextPage = () => {
               </a>
             </Link>
             <Link href='/' >
-              <a className='btnGreen  z-50' >View Project</a>
+              <a className='btnGreen  ' >View Project</a>
             </Link>
           </div>
         </div>
         {/*  */}
         <div className="grid grid-cols-1 text-center justify-center">
           <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} dir={'rtl'} />
-          <div className='z-40'>
+          <div className=''>
             <Link href='/' >
               <a className='btnGreen inline  ' >View Project</a>
             </Link>
