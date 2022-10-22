@@ -9,7 +9,6 @@ const SvgCookie = (props: any) => (
             enableBackground: "new 0 0 1072 785",
             width: '100%',
             height: '500px',
-            zIndex: 0
         }}
         xmlSpace="preserve"
         {...props}

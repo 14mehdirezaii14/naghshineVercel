@@ -37,7 +37,7 @@ const NavBar: FunctionComponent<{}> = () => {
     }
     return (
         <>
-            <div ref={navElement} className=" fixed shadow-md  py-2 z-50  top-0 opacity-0 left-0 right-0 bg-white">
+            <div ref={navElement} className="z-50 fixed shadow-md  py-2  top-0 opacity-0 left-0 right-0 bg-white">
                 <div className="container mx-auto">
                     {/* logo */}
                     <div className="float-left">
@@ -54,7 +54,7 @@ const NavBar: FunctionComponent<{}> = () => {
                         })}
                     </div>
                     {/* sx btn nav */}
-                    <div onClick={clickMenu} className={`${styles.itemNav} relative items-center pt-3 sx:flex md:hidden`}>
+                    <div onClick={clickMenu} className={`${styles.itemNav} relative z-50 items-center pt-3 sx:flex md:hidden`}>
                         <button className="btn" >
                             {/* <FiMenu size={30} /> */}
                             <span ref={refSpanBtnSx} className={`${styles.spanBtnNav} spanBtnNav`}></span>
@@ -65,7 +65,7 @@ const NavBar: FunctionComponent<{}> = () => {
 
             </div>
             {/* navBar sx */}
-            <div ref={navSx} className="sx:fixed md:hidden top-14 pt-5 w-2/4 text-right z-50 bg-white shadow-lg h-full -right-80 ">
+            <div ref={navSx} className="sx:fixed md:hidden top-14 pt-5 w-2/4 text-right  bg-white shadow-lg h-full -right-80 ">
                 <ul>
                     {listItemNav.map((item: any, index: any) => {
                         return (

@@ -34,7 +34,7 @@ const BgTitleAnimation = ({ keyUnique, words, dir, color = '#000' }: { keyUnique
         });
     }, [])
     return (
-        < div ref={ref} className="flex bgTitle relative z-0" style={{ top: '-50px', marginBottom: '-100px' }} >
+        < div ref={ref} className="flex bgTitle relative " style={{ top: '-50px', marginBottom: '-100px' }} >
             {
                 words.map((word: any, index: any) => {
                     return (

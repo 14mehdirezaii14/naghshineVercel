@@ -18,14 +18,14 @@ const Home: NextPage = () => {
   const scrollEvent = () => {
     if (videoColumnRef?.current?.getBoundingClientRect().top) {
       if (videoColumnRef?.current?.getBoundingClientRect().top < 600) {
-        gsap.to(videoColumnRef.current, { zIndex: 10, opacity: 1, top: 0, duration: 0.5 });
+        gsap.to(videoColumnRef.current, {  opacity: 1, top: 0, duration: 0.5 });
       } else {
         gsap.to(videoColumnRef.current, { opacity: 0, top: 200, duration: 0.5 });
       }
     }
     if (rowRef1.current?.getBoundingClientRect().top) {
       if (rowRef1.current.getBoundingClientRect().top < 600) {
-        gsap.to(rowRef1.current, { zIndex: 10, opacity: 1, top: 0, duration: 0.5 });
+        gsap.to(rowRef1.current, {  opacity: 1, top: 0, duration: 0.5 });
       } else {
         gsap.to(rowRef1.current, { opacity: 0, top: 200, duration: 0.5 });
       }
@@ -39,16 +39,16 @@ const Home: NextPage = () => {
     };
   }, [])
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>naghshineh</title>
         <meta name="description" content="Home Page naghshineh" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='container z-50 mx-auto py-5'>
+      <div className='container mx-auto py-5'>
         {/* head */}
         <SvgLogo />
-        <div className={`text-center z-30 ${styles.HeaderHomeTitle} relative -top-80 md:mb-0 sx:-mb-56 text-center`}>
+        <div className={`text-center  ${styles.HeaderHomeTitle} relative -top-80 md:mb-0 sx:-mb-56 text-center`}>
           <h1 className={`${styles.HeaderHomeLine1}`}>
             CONNECTING
           </h1>
@@ -57,8 +57,8 @@ const Home: NextPage = () => {
           </h2>
         </div>
         {/*  */}
-        <div className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-12 z-30  items-center ">
-          <div className="md:col-span-8 sm:col-span-12 relative text-right z-30" >
+        <div className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-12   items-center ">
+          <div className="md:col-span-8 sm:col-span-12 relative text-right" >
             <Link href='/'>
               <a>
                 <div className="divImg">
@@ -106,7 +106,7 @@ const Home: NextPage = () => {
             <Link href='/'>
               <a>
                 <div className="divImg">
-                  <Image placeholder='blur' alt="Logo" src='/download.jpg' blurDataURL='/download.jpg'  lazyRoot={lazyRoot} height={400} width={800} className='hoverScale right-0 bg-gray-500 z-30 w-full block' />
+                  <Image placeholder='blur' alt="Logo" src='/download.jpg' blurDataURL='/download.jpg'  lazyRoot={lazyRoot} height={400} width={800} className='hoverScale right-0 bg-gray-500  w-full block' />
                 </div>
               </a>
             </Link>
@@ -120,14 +120,14 @@ const Home: NextPage = () => {
               </a>
             </Link>
             <Link href='/' >
-              <a className='btnGreen  z-50' >View Project</a>
+              <a className='btnGreen  ' >View Project</a>
             </Link>
           </div>
         </div>
         {/*  */}
         <div className="grid grid-cols-1 text-center justify-center">
           <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} dir={'rtl'} />
-          <div className='z-40'>
+          <div className=''>
             <Link href='/' >
               <a className='btnGreen inline  ' >View Project</a>
             </Link>
@@ -140,12 +140,12 @@ const Home: NextPage = () => {
         background: '#1d1d20',
         color: 'black !important'
       }} >
-        <div className=" absolute z-0  bottom-0 right-0 top-0 left-0   overflow-hidden" style={{
+        <div className=" absolute   bottom-0 right-0 top-0 left-0   overflow-hidden" style={{
 
         }} >
           <CanvasDotsBackground />
         </div>
-        <div className='container z-20 mx-auto  relative' >
+        <div className='container  mx-auto  relative' >
           <BgTitleAnimation keyUnique={'4'} words={['b', 'l', 'o', 'g']} dir={'rtl'} />
           <div className='text-white relative md:-top-20 sx:top-0 text-center  grid grid-cols-12 -mb-16'>
             <div className='md:col-span-4 sx:col-span-12 ' ><p className='text-left' style={{
@@ -201,7 +201,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-    </div >
+    </ >
   )
 }
 
