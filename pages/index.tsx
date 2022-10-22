@@ -11,7 +11,7 @@ const SvgLogo = dynamic(() => import('../components/svgLogo/SvgLogo'))
 const BgTitleAnimation = dynamic(() => import('../components/BgTitleAnimation/BgTitleAnimation'))
 const VideoColumn = dynamic(() => import('../components/VideoColumn/VideoColumn'))
 const CanvasDotsBackground = dynamic(() => import('../components/CanvasDotsBackground/CanvasDotsBackground'))
-
+const ImageComponent = dynamic(() => import('../components/ImageComponent/ImageComponent'))
 const Home: NextPage = () => {
   const lazyRoot = useRef<HTMLHeadingElement>(null)
   const videoColumnRef = useRef<HTMLDivElement>(null)
@@ -65,7 +65,7 @@ const Home: NextPage = () => {
             <Link href='/'>
               <a>
                 <div className="divImg">
-                  <Image placeholder='blur' alt="Logo" src='/download.jpg' blurDataURL='/download.jpg' lazyRoot={lazyRoot} height={400} width={800} className='hoverScale right-0 bg-gray-500 w-full block' />
+                  <ImageComponent src='/download.jpg' alt='1' width={800} height={400} className={'hoverScale right-0'} />
                 </div>
               </a>
             </Link>
@@ -167,7 +167,7 @@ const Home: NextPage = () => {
           <div className="container mx-auto md:mt-0 sx:mt-20">
             <div className="grid gap-6 md:grid-cols-3 sx:grid-cols-1  relative">
               <div className='colSectionBlog '>
-                <Image alt='alt' className='imgSectionBlog' blurDataURL='/download.jpg' lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
+                <ImageComponent src={'/blog.webp'} alt='1' width={500} height={500} className={'imgSectionBlog'} />
                 <div className='p-3 relaive textColSectionBlog'>
                   <p className='text-color-green subTitleSectionBlog subTitleBrfore'>
                     4th of October 2022</p>
@@ -177,7 +177,7 @@ const Home: NextPage = () => {
               </div>
               {/*  */}
               <div className='colSectionBlog '>
-                <Image placeholder='blur' alt='alt' className='imgSectionBlog' blurDataURL='/download.jpg' lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
+                <ImageComponent src={'/blog.webp'} alt='1' width={500} height={500} className={'imgSectionBlog'} />
                 <div className='p-3 relaive textColSectionBlog'>
                   <p className='text-color-green subTitleSectionBlog subTitleBrfore'>
                     4th of October 2022</p>
@@ -187,7 +187,7 @@ const Home: NextPage = () => {
               </div>
               {/*  */}
               <div className='colSectionBlog '>
-                <Image placeholder='blur' alt='alt' className='imgSectionBlog' blurDataURL='/download.jpg' lazyRoot={lazyRoot} src={'/blog.webp'} width={500} height={500} />
+                <ImageComponent src={'/blog.webp'} alt='1' width={500} height={500} className={'imgSectionBlog'} />
                 <div className='p-3 relaive textColSectionBlog'>
                   <p className='text-color-green subTitleSectionBlog subTitleBrfore'>
                     4th of October 2022</p>
