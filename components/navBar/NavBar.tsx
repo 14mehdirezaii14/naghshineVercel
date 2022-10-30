@@ -47,7 +47,7 @@ const NavBar: FunctionComponent<{}> = () => {
                     <div className={` ${styles.itemNav} items-center pt-3 sx:hidden md:flex`}>
                         {listItemNav.map((item: any, index: any) => {
                             return (
-                                <Link key={index} href={item.path}><a className="mx-3">
+                                <Link  key={index} href={item.path}><a className="mx-3">
                                     {item.title}
                                 </a></Link>
                             )
@@ -70,7 +70,7 @@ const NavBar: FunctionComponent<{}> = () => {
                 <ul>
                     {listItemNav.map((item: any, index: any) => {
                         return (
-                            <li key={index}>
+                            <li onClick={clickMenu} key={index}>
                                 <Link href={item.path}><a className="mx-3">
                                     {item.title}
                                 </a></Link>
