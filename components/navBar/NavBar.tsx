@@ -41,7 +41,7 @@ const NavBar: FunctionComponent<{}> = () => {
                 <div className="container mx-auto">
                     {/* logo */}
                     <div className="float-left">
-                        <Image placeholder='blur' blurDataURL='/download.jpg'  priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
+                        <Image placeholder='blur' blurDataURL='/download.jpg' priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
                     </div>
                     {/* item nav */}
                     <div className={` ${styles.itemNav} items-center pt-3 sx:hidden md:flex`}>
@@ -54,10 +54,10 @@ const NavBar: FunctionComponent<{}> = () => {
                         })}
                     </div>
                     {/* sx btn nav */}
-                    <div onClick={clickMenu} className={`${styles.itemNav} relative items-center pt-3 sx:flex md:hidden`}>
-                        <button className="btn" >
+                    <div onClick={clickMenu} className={`${styles.itemNav} relative items-center top-0 pt-3 sx:flex md:hidden`}>
+                        <button className="btn top-0" >
                             {/* <FiMenu size={30} /> */}
-                            <span ref={refSpanBtnSx} className={`${styles.spanBtnNav} spanBtnNav`}></span>
+                            <span ref={refSpanBtnSx} className={`${styles.spanBtnNav} top-0 spanBtnNav`}></span>
                         </button>
                     </div>
 
@@ -66,7 +66,8 @@ const NavBar: FunctionComponent<{}> = () => {
             </div>
             {/* navBar sx */}
             <div ref={navSx} className="sx:fixed md:hidden top-14 pt-5 w-2/4 text-right z-50 bg-white shadow-lg h-full -right-80 ">
-                
+
+                <ul>
                     {listItemNav.map((item: any, index: any) => {
                         return (
                             <li key={index}>
@@ -76,7 +77,8 @@ const NavBar: FunctionComponent<{}> = () => {
                             </li>
                         )
                     })}
-                
+                </ul>
+
             </div>
         </>
     )
