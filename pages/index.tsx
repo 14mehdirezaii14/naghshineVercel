@@ -130,9 +130,9 @@ const Home: NextPage = () => {
         {/*  */}
         <div className="grid grid-cols-1 text-center justify-center">
           <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} dir={'rtl'} />
-          <div className=''>
+          <div className='z-10'>
             <Link href='/' >
-              <a className='btnGreen inline  ' >View Project</a>
+              <a className='btnGreen inline' >View Project</a>
             </Link>
           </div>
         </div>
