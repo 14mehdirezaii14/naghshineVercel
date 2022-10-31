@@ -9,6 +9,13 @@
     margin-bottom: 0;
 }
 
+@media only screen and (max-width: 800px) {
+   .footerLeft{
+    width: 100%;
+    letter-spacing: .03em;
+   }
+}
+
 .footerLeft > *{
     transition: 0.5s all ease-out;
 }

@@ -6,7 +6,7 @@ const BgTitleAnimation = dynamic(() => import('../BgTitleAnimation/BgTitleAnimat
 
 const Footer = () => {
     return (
-        <div className="bg-[#f6f7f9]">
+        <div className="bg-[#f6f7f9] pt-5">
             <div className="container mx-auto py-5">
 
                 <BgTitleAnimation dir="rtl" keyUnique="4" words={['c', 'o', 'n', 't', 'a', 'c', 't']} />
