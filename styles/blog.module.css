@@ -1,0 +1,29 @@
+.titleBlogPage{
+    position: absolute;
+    top: -150px;
+    font-size: 52px;
+    letter-spacing: .3em;
+    font-weight: 600;
+    color: #1d1d21;
+}
+
+.btnTabBlog{
+    display: block;
+    text-transform: uppercase;
+    font-family: BebasNeue;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    transition: color 1s ease;
+    margin: 0 0 15px;
+    cursor: pointer;
+}
+
+.activeTabBlog{
+    transition: 0.5s all ease-in-out;
+    color: #41f3b7;
+}
+
+.tabContentBlog{
+    transition: 0.5s all ease-out;
+}

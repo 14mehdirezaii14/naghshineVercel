@@ -232,3 +232,10 @@ body {
     font-size: 150px;
     letter-spacing: 40px;
 }
+.bgTitleStatic{
+    transition: 0.2s all ease-out;
+    font-size:150px;
+    letter-spacing: 50px;
+    /* opacity: 1; */
+    color: #f6f7f9;
+}
