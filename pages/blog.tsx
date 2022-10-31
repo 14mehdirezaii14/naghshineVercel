@@ -74,9 +74,9 @@ const Blog = () => {
                         <li onClick={() => setActiveTab('all')} className="mr-2" role="presentation">
                             <button className={`inline-block p-4 rounded-t-lg ${activeTab === 'all' ? styles.activeTabBlog : null}  ${styles.btnTabBlog}`} id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">all</button>
                         </li>
-                        {data.map((category) => {
+                        {data.map((category,index) => {
                             return (
-                                <li onClick={changeTab} className={`mr-2 ${styles.btnTabBlog}`} role="presentation">
+                                <li key={index} onClick={changeTab} className={`mr-2 ${styles.btnTabBlog}`} role="presentation">
                                     <button className={`inline-block p-4 rounded-t-lg ${category.category} ${activeTab === category.category ? styles.activeTabBlog : null} `} id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">{category.category} <span className="font-normal text-sm">{category.count}</span></button>
                                 </li>
                             )
@@ -87,31 +87,29 @@ const Blog = () => {
                 <div id="myTabContent" className="col-span-8">
                     {/* tabs all */}
                     <div className={`${styles.tabContentBlog} ${activeTab === 'all' ? 'block' : 'hidden'} `} id="allContentBlog">
-                        {data.map((category) => {
+                        {data.map((category,index) => {
                             return (
-                                <>
-                                    {category.posts.map((post) => {
+                                <div key={index}>
+                                    {category.posts.map((post,index) => {
                                         return (
-                                            <div className=" p-4 bg-gray-50 rounded-lg dark:bg-gray-800" role="tabpanel" aria-labelledby="profile-tab">
+                                            <div key={index} className=" p-4 bg-gray-50 rounded-lg dark:bg-gray-800" role="tabpanel" aria-labelledby="profile-tab">
                                                 <p className="text-sm text-gray-500 dark:text-gray-400">{post.title}</p>
                                             </div>
                                         )
                                     })}
-                                </>
+                                </div>
                             )
                         })}
                     </div>
                     {/*  */}
-                    {data.map((category) => {
+                    {data.map((category,index) => {
                         return (
-                                <div className={`${styles.tabContentBlog} ${activeTab === category.category ? 'block' : 'hidden'}  `} id={`${category.category}`} role="tabpanel" aria-labelledby="profile-tab">
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">{category.posts.map((post) => {
+                                <div key={index} className={`${styles.tabContentBlog} ${activeTab === category.category ? 'block' : 'hidden'}  `} id={`${category.category}`} role="tabpanel" aria-labelledby="profile-tab">
+                                    <div className="text-sm text-gray-500 dark:text-gray-400">{category.posts.map((post,index) => {
                                         return(
-                                            <>
-                                            <p>{post.title}</p>
-                                            </>
+                                            <div key={index}>{post.title}</div>
                                         )
-                                    })}</p>
+                                    })}</div>
                                 </div>
                                 
                         )
