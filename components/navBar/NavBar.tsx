@@ -56,7 +56,6 @@ const NavBar: FunctionComponent<{}> = () => {
                     {/* sx btn nav */}
                     <div onClick={clickMenu} className={`${styles.itemNav} relative items-center top-0 pt-3 sx:flex md:hidden`}>
                         <button className="btn " >
-                            {/* <FiMenu size={30} /> */}
                             <span ref={refSpanBtnSx} className={`${styles.spanBtnNav} top-5 spanBtnNav`}></span>
                         </button>
                     </div>
