@@ -2,7 +2,7 @@ import CanvasDotsBackground from "../CanvasDotsBackground/CanvasDotsBackground"
 import BgTitleAnimation from "../BgTitleAnimation/BgTitleAnimation"
 import BoxHover1 from "../BoxHover1/BoxHover1"
 
-export default function () {
+const SectionDotsBg = () => {
     return (
         <>
             <div className='  overflow-hidden  sectionBlog' style={{
@@ -45,3 +45,5 @@ export default function () {
         </>
     )
 }
+
+export default SectionDotsBg

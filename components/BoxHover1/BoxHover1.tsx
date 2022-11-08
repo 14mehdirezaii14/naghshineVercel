@@ -1,6 +1,6 @@
 import ImageComponent from "../ImageComponent/ImageComponent"
 
-export default function ({ src, subTItle, dialog }: { src: string, subTItle: string, dialog: string }) {
+const BoxHover1 = ({ src, subTItle, dialog }: { src: string, subTItle: string, dialog: string }) => {
     return (
         <>
             <div className='colSectionBlog '>
@@ -17,3 +17,5 @@ export default function ({ src, subTItle, dialog }: { src: string, subTItle: str
         </>
     )
 }
+
+export default BoxHover1

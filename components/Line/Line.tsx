@@ -7,7 +7,7 @@ const Line: FunctionComponent = () => {
     const [count, setCount] = useState(0);
     const lineElement = useRef<HTMLHeadingElement>(null)
 
-    const scrollEvent = useCallback(() => {
+    const scrollEvent = () => {
         const scrollY = window.scrollY
         const allHeightPage = window.innerHeight + window.scrollY
         setCount(scrollY)
@@ -21,7 +21,7 @@ const Line: FunctionComponent = () => {
         else {
             gsap.to(lineElement.current, { height: '400px' })
         }
-    }, [])
+    }
 
 
     useEffect(() => {

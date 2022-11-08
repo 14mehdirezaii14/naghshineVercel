@@ -1,6 +1,6 @@
 import Link from "next/link"
 import ImageComponent from "../ImageComponent/ImageComponent"
-export default function ({ src, infoTitle, subTitle, to, textBtn }: { src: string, infoTitle: string, subTitle: string, to: string, textBtn: string }) {
+const HeroSection = ({ src, infoTitle, subTitle, to, textBtn }: { src: string, infoTitle: string, subTitle: string, to: string, textBtn: string }) => {
     return (
         <>
             <div className="grid sm:grid-cols-1 md:grid-cols-12 gap-x-12   items-center ">
@@ -30,3 +30,4 @@ export default function ({ src, infoTitle, subTitle, to, textBtn }: { src: strin
         </>
     )
 }
+export default HeroSection
