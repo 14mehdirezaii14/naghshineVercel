@@ -10,7 +10,6 @@
 .btnTabBlog {
     display: block;
     text-transform: uppercase;
-    font-family: BebasNeue;
     font-size: 22px;
     font-weight: 600;
     letter-spacing: .04em;
@@ -31,7 +30,6 @@
 .titleBlogPost {
     position: relative;
     color: #000;
-    font-family: BebasNeue;
     font-size: 25px;
     text-transform: uppercase;
     font-weight: 500;

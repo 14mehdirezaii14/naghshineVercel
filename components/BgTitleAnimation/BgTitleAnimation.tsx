@@ -1,6 +1,6 @@
-import { useRef, useEffect, useState,useCallback } from "react"
+import { useRef, useEffect } from "react"
 import gsap from "gsap"
-const BgTitleAnimation = ({ keyUnique, words, dir, color = '#000' }: { keyUnique: string, words: string[], dir: string, color?: string }) => {
+const BgTitleAnimation = ({ keyUnique, words, dir }: { keyUnique: string, words: string[], dir: string, color?: string }) => {
     const ref = useRef<any>(null)
 
     const scrollEvent = () => {
@@ -30,6 +30,8 @@ const BgTitleAnimation = ({ keyUnique, words, dir, color = '#000' }: { keyUnique
                     },)
                 }
             }
+        } else {
+            return
         }
     }
     useEffect(() => {
