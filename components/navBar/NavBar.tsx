@@ -37,11 +37,11 @@ const NavBar: FunctionComponent<{}> = () => {
     }
     return (
         <>
-            <div ref={navElement} className=" fixed shadow-md  py-2 z-50  top-0 opacity-0 left-0 right-0 bg-white">
+            <div ref={navElement} className=" fixed shadow-md  py-2 z-50  top-0  left-0 right-0 bg-white">
                 <div className="container mx-auto">
                     {/* logo */}
                     <div className="float-left">
-                        <Image placeholder='blur' blurDataURL='/download.jpg' priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
+                        <Image placeholder='blur' blurDataURL='/download-min.jpg' priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
                     </div>
                     {/* item nav */}
                     <div className={` ${styles.itemNav} items-center pt-3 sx:hidden md:flex`}>

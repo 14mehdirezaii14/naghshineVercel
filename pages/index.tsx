@@ -61,7 +61,7 @@ const Home: NextPage = () => {
           </h2>
         </div>
         {/*  */}
-        <HeroSection src='/download.jpg'
+        <HeroSection src='/download-min.jpg'
           infoTitle='From Montreal to Lille, France. A creative leap over the Atlantic.'
           subTitle='hello'
           textBtn='view project' to='/' />
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
         {/*  */}
         <BgTitleAnimation keyUnique={'2'} words={['a', 'c', 't', 'i', 'v', 'a', 't', 'i', 'o', 'n']} dir={'rtl'} />
         <div ref={rowRef1}>
-          <HeroSection src='/download.jpg'
+          <HeroSection src='/download-min.jpg'
             infoTitle='From Montreal to Lille, France. A creative leap over the Atlantic.'
             subTitle='hello'
             textBtn='view project' to='/' />
