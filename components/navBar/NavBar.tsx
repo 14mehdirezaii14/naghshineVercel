@@ -50,9 +50,14 @@ const NavBar: FunctionComponent<{}> = () => {
                     <div className={` ${styles.itemNav} items-center pt-3 sx:hidden md:flex`}>
                         {listItemNav.map((item: any, index: any) => {
                             return (
-                                <a key={index} href={item.path} onClick={router.asPath === '/' ? (e) => homeAnimationChangePage(e,item.path) : (e) => homeAnimationChangePage(e,item.path)} className="mx-3">
-                                    {item.title}
-                                </a>
+                                // <a key={index} href={item.path} onClick={router.asPath === '/' ? (e) => homeAnimationChangePage(e,item.path) : (e) => homeAnimationChangePage(e,item.path)} className="mx-3">
+                                //     {item.title}
+                                // </a>
+                                <Link href={item.path} key={index} >
+                                    <a className="mx-3" onClick={router.asPath === '/' ? (e) => homeAnimationChangePage(e, item.path) : (e) => homeAnimationChangePage(e, item.path)}>
+                                        {item.title}
+                                    </a>
+                                </Link>
                             )
                         })}
                     </div>

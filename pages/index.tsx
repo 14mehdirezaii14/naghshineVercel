@@ -92,7 +92,10 @@ const Home: NextPage = () => {
                     From Montreal to Lille, France. A creative leap over the Atlantic.</p>
                 </a>
               </Link>
-              <a className='btnGreen btnGreen inline' href='/' onClick={(e) => homeAnimationChangePage(e, 'contact-us')} >View Project</a>
+              <Link href="#">
+                <a className='btnGreen btnGreen inline' onClick={(e) => homeAnimationChangePage(e, 'contact-us')} >View Project</a>
+
+              </Link>
             </div>
             <VideoColumn img={'https://i.vimeocdn.com/video/780757293-1c2ac502d89b659935c76cc89a7e76bc175c7276baa487b4d130bea6c11d50bb-d_1280'} />
           </div>
@@ -108,9 +111,10 @@ const Home: NextPage = () => {
           <div className="grid grid-cols-1 text-center justify-center">
             <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} dir={'rtl'} />
             <div className='z-10'>
-              <a href='/' className='btnGreen inline' onClick={(e) => homeAnimationChangePage(e, 'contact-us')}  >
-                View Project
-              </a>
+            <Link href="#">
+                <a className='btnGreen btnGreen inline' onClick={(e) => homeAnimationChangePage(e, 'contact-us')} >View Project</a>
+
+              </Link>
             </div>
           </div>
           {/*  */}
