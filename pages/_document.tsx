@@ -1,16 +1,13 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { Suspense } from 'react'
-
-import Loading from '../components/Loading/Loading'
 export default function Document() {
     return (
-        <Html >
-            <Head />
-            <body className='' >
+        <Html className='font-BebasNeue'>
+            <Head >
+                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+            </Head>
+            <body className='font-BebasNeue' >
                 <Main />
-                <Suspense fallback={<Loading />}>
-                    <NextScript />
-                </Suspense>
+                <NextScript />
             </body>
         </Html>
     )

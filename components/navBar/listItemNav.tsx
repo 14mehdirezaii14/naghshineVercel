@@ -2,5 +2,6 @@
 
 export const listItemNav = [
     { path: '/', title: 'Home' },
-    { path: '/aboutus', title: 'about us' }
+    { path: '/contact-us', title: 'Contact' },
+    { path: '/blog', title: 'Blog' }
 ]

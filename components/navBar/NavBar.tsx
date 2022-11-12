@@ -7,8 +7,10 @@ import Link from "next/link"
 import styles from './navBar.module.css'
 import { listItemNav } from './listItemNav'
 import { FiMenu } from "react-icons/fi";
-
+import { useRouter } from 'next/router'
+import homeAnimationChangePage from "../../AnimationChangePage/homeAnimationChangePage"
 const NavBar: FunctionComponent<{}> = () => {
+    const router = useRouter()
     const navElement = useRef<HTMLHeadingElement>(null)
     const navSx = useRef<HTMLHeadingElement>(null)
     const refSpanBtnSx = useRef<any>(null)
@@ -17,6 +19,7 @@ const NavBar: FunctionComponent<{}> = () => {
         scrollTop > 10 ? gsap.to(navElement.current, { opacity: '1' }) : gsap.to(navElement.current, { opacity: '0' })
     }
     useEffect(() => {
+        console.log(router)
         document.addEventListener("scroll", scrollEventNavBar);
         return () => {
             window.removeEventListener("scroll", scrollEventNavBar);
@@ -37,27 +40,26 @@ const NavBar: FunctionComponent<{}> = () => {
     }
     return (
         <>
-            <div ref={navElement} className="z-50 fixed shadow-md  py-2  top-0 opacity-0 left-0 right-0 bg-white">
+            <div ref={navElement} className=" fixed shadow-md  py-2 z-50  top-0  left-0 right-0 bg-white">
                 <div className="container mx-auto">
                     {/* logo */}
                     <div className="float-left">
-                        <Image placeholder='blur' blurDataURL='/download.jpg'  priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
+                        <Image placeholder='blur' blurDataURL='/download-min.jpg' priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
                     </div>
                     {/* item nav */}
                     <div className={` ${styles.itemNav} items-center pt-3 sx:hidden md:flex`}>
                         {listItemNav.map((item: any, index: any) => {
                             return (
-                                <Link key={index} href={item.path}><a className="mx-3">
+                                <a key={index} href={item.path} onClick={router.asPath === '/' ? (e) => homeAnimationChangePage(e,item.path) : (e) => homeAnimationChangePage(e,item.path)} className="mx-3">
                                     {item.title}
-                                </a></Link>
+                                </a>
                             )
                         })}
                     </div>
                     {/* sx btn nav */}
-                    <div onClick={clickMenu} className={`${styles.itemNav} relative z-50 items-center pt-3 sx:flex md:hidden`}>
-                        <button className="btn" >
-                            {/* <FiMenu size={30} /> */}
-                            <span ref={refSpanBtnSx} className={`${styles.spanBtnNav} spanBtnNav`}></span>
+                    <div onClick={clickMenu} className={`${styles.itemNav} relative items-center top-0 pt-3 sx:flex md:hidden`}>
+                        <button className="btn " >
+                            <span ref={refSpanBtnSx} className={`${styles.spanBtnNav} top-5 spanBtnNav`}></span>
                         </button>
                     </div>
 
@@ -65,18 +67,21 @@ const NavBar: FunctionComponent<{}> = () => {
 
             </div>
             {/* navBar sx */}
-            <div ref={navSx} className="sx:fixed md:hidden top-14 pt-5 w-2/4 text-right  bg-white shadow-lg h-full -right-80 ">
+            <div ref={navSx} className="sx:fixed md:hidden top-14 pt-5 w-2/4 text-right z-50 bg-white shadow-lg h-full -right-80 ">
                 <ul>
                     {listItemNav.map((item: any, index: any) => {
                         return (
-                            <li key={index}>
-                                <Link href={item.path}><a className="mx-3">
-                                    {item.title}
-                                </a></Link>
+                            <li onClick={clickMenu} key={index}>
+                                <Link href={item.path}>
+                                    <a className="mx-3">
+                                        {item.title}
+                                    </a>
+                                </Link>
                             </li>
                         )
                     })}
                 </ul>
+
             </div>
         </>
     )

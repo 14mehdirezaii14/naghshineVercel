@@ -7,11 +7,11 @@ const Line: FunctionComponent = () => {
     const [count, setCount] = useState(0);
     const lineElement = useRef<HTMLHeadingElement>(null)
 
-    const scrollEvent = useCallback(() => {
+    const scrollEvent = () => {
         const scrollY = window.scrollY
         const allHeightPage = window.innerHeight + window.scrollY
         setCount(scrollY)
-        if (scrollY < 50) {
+        if (scrollY < 30) {
             gsap.to(lineElement.current, { height: '0px' })
         }
         else if (allHeightPage === document.body.offsetHeight) {
@@ -21,7 +21,7 @@ const Line: FunctionComponent = () => {
         else {
             gsap.to(lineElement.current, { height: '400px' })
         }
-    }, [])
+    }
 
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const Line: FunctionComponent = () => {
 
 
     return (
-        <div className={`${styles.Line} `} ref={lineElement}>
+        <div className={`${styles.Line} z-0`} ref={lineElement}>
             <div className={styles.Line__svg} style={{ transform: `matrix(1, 0, 0, 1, 0, -${count})` }} >
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1064 4569">

@@ -79,7 +79,7 @@ const CanvasDotsBackground = (props: any) => {
         }
     }, [])
     return (
-        <canvas className="CanvasDots absolute  -left-40 -top-36 w-full " style={{
+        <canvas className="CanvasDots absolute -z-0 -left-40 -top-36 w-full " style={{
             left: '-328px',
             width: `${widthPage}px`,
         }}>
