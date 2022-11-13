@@ -31,12 +31,12 @@ const SectionDotsBg = () => {
                         </div>
                     </div>
                     <div className="container mx-auto md:mt-0 sx:mt-20">
-                        <div className="grid gap-6 md:grid-cols-3 sx:grid-cols-1  relative">
-                            <BoxHover1 src='/blog.webp' subTItle="4th of October 2022" dialog="Gen Z in Canada - A Starting Point  For A Dialogue." />
+                        <div className="grid  gap-6 md:grid-cols-3 sx:grid-cols-1  relative">
+                            <BoxHover1 classDialog="text-white" src='/blog.webp' subTItle="4th of October 2022" dialog="Gen Z in Canada - A Starting Point  For A Dialogue." />
                             {/*  */}
-                            <BoxHover1 src='/blog.webp' subTItle="4th of October 2022" dialog="Gen Z in Canada - A Starting Point  For A Dialogue." />
+                            <BoxHover1 classDialog="text-white" src='/blog.webp' subTItle="4th of October 2022" dialog="Gen Z in Canada - A Starting Point  For A Dialogue." />
                             {/*  */}
-                            <BoxHover1 src='/blog.webp' subTItle="4th of October 2022" dialog="Gen Z in Canada - A Starting Point  For A Dialogue." />
+                            <BoxHover1 classDialog="text-white" src='/blog.webp' subTItle="4th of October 2022" dialog="Gen Z in Canada - A Starting Point  For A Dialogue." />
 
                         </div>
                     </div>

@@ -15,7 +15,7 @@ const HeaderTitle1 = ({ bgTitle, title }: { bgTitle: string, title: string }) =>
                                 delay: 0.5,
                                 ease: [0, 0.71, 0.2, 1.01]
                             }}
-                            key={index} className='inline-block'>
+                            key={index} className={`${styles.bgTitleDiv} inline-block`}>
                             {word}
                         </motion.div>
                     )
