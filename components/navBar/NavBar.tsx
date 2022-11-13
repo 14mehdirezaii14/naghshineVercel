@@ -19,7 +19,6 @@ const NavBar: FunctionComponent<{}> = () => {
         scrollTop > 10 ? gsap.to(navElement.current, { opacity: '1' }) : gsap.to(navElement.current, { opacity: '0' })
     }
     useEffect(() => {
-        console.log(router)
         document.addEventListener("scroll", scrollEventNavBar);
         return () => {
             window.removeEventListener("scroll", scrollEventNavBar);

@@ -28,7 +28,6 @@ const Home: NextPage = () => {
       }
     }
     if (rowRef1.current?.getBoundingClientRect().top) {
-      console.log(rowRef1.current.getBoundingClientRect().top)
       if (rowRef1.current.getBoundingClientRect().top < 1000) {
         gsap.to(rowRef1.current, { opacity: 1, top: 0, duration: 0.5 });
       } else {

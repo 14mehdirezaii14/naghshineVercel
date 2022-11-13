@@ -8,7 +8,7 @@ const CanvasDotsBackground = (props: any) => {
         const height = window.outerHeight + 1600;
         const count = 80;
         const rowsize = 50;
-        let dotsize: any = 1;
+        let dotsize: any = 10;
         const dotmin = 2.5;
         const dotsizebase = 10;
         let PosX: any = ''
@@ -51,11 +51,11 @@ const CanvasDotsBackground = (props: any) => {
                 for (let $iy = 4; $iy <= (count); $iy++) {
                     ctx.beginPath();
                     let $scaler = Math.hypot(GlobalX / rowsize - $ix, GlobalY / rowsize - $iy);
-                    dotsize = dotsizebase - $scaler;
+                    dotsize = dotsizebase - $scaler ;
                     if (dotsize < dotmin) {
                         dotsize = 1;
                     }
-                    ctx.arc(rowsize * $ix, rowsize * $iy, dotsize, 0, 50 * Math.PI);
+                    ctx.arc(rowsize * $ix, rowsize * $iy, dotsize *0.3, 0, 50 * Math.PI);
                     $counter = $counter;
                     ctx.strokeStyle = "#41f3b7";
 
