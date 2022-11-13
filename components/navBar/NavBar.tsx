@@ -53,7 +53,7 @@ const NavBar: FunctionComponent<{}> = () => {
                                 //     {item.title}
                                 // </a>
                                 <Link href={item.path} key={index} >
-                                    <a className="mx-3" onClick={router.asPath === '/' ? (e) => homeAnimationChangePage(e, item.path) : (e) => homeAnimationChangePage(e, item.path)}>
+                                    <a className="mx-3" onClick={router.asPath === '/' ? (e) => homeAnimationChangePage(e, item.path) : (e) => false}>
                                         {item.title}
                                     </a>
                                 </Link>
