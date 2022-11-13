@@ -77,8 +77,8 @@ const NavBar: FunctionComponent<{}> = () => {
                     {listItemNav.map((item: any, index: any) => {
                         return (
                             <li onClick={clickMenu} key={index}>
-                                <Link href={item.path}>
-                                    <a className="mx-3">
+                                <Link href={item.path} key={index} >
+                                    <a className="mx-3" onClick={router.asPath === '/' ? (e) => homeAnimationChangePage(e, item.path) : (e) => homeAnimationChangePage(e, item.path)}>
                                         {item.title}
                                     </a>
                                 </Link>
