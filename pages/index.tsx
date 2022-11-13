@@ -92,7 +92,7 @@ const Home: NextPage = () => {
                 </a>
               </Link>
               <Link href="#">
-                <a className='btnGreen btnGreen inline' onClick={(e) => homeAnimationChangePage(e, 'contact-us')} >View Project</a>
+                <a className='btnGreen btnGreen inline' onClick={(e) => homeAnimationChangePage(e, '/contact-us')} >View Project</a>
 
               </Link>
             </div>
@@ -111,7 +111,7 @@ const Home: NextPage = () => {
             <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} dir={'rtl'} />
             <div className='z-10'>
             <Link href="#">
-                <a className='btnGreen btnGreen inline' onClick={(e) => homeAnimationChangePage(e, 'contact-us')} >View Project</a>
+                <a className='btnGreen btnGreen inline' onClick={(e) => homeAnimationChangePage(e, '/contact-us')} >View Project</a>
 
               </Link>
             </div>

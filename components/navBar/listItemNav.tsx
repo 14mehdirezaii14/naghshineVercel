@@ -5,4 +5,5 @@ export const listItemNav = [
     { path: '/contact-us', title: 'Contact' },
     { path: '/blog', title: 'Blog' },
     { path: '/work', title: 'Work' },
+    { path: '/careers', title: 'Careers' },
 ]

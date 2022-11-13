@@ -9,7 +9,7 @@ const homeAnimationChangePage = (e: any, to: string) => {
     gsap.to('.Home', { opacity: 0, duration: 1 })
     gsap.to('.Line_Line__kdL_O', { height:0, duration: 0.5 })
     setTimeout(() => {
-        Router.push(`/${to}`)
+        Router.push(`${to}`)
     }, 1000)
 }
 

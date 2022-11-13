@@ -58,6 +58,7 @@ const CanvasDotsBackground = (props: any) => {
                     ctx.arc(rowsize * $ix, rowsize * $iy, dotsize *0.3, 0, 50 * Math.PI);
                     $counter = $counter;
                     ctx.strokeStyle = "#41f3b7";
+                    ctx.background = "#41f3b7";
 
 
                     ctx.lineWidth = 1;
