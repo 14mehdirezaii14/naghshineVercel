@@ -1,0 +1,25 @@
+.title {
+    /* position: absolute; */
+    top: -150px;
+    font-size: 52px;
+    letter-spacing: .3em;
+    font-weight: 600;
+    color: #1d1d21;
+}
+
+.bgTitleStatic {
+    transition: 0.2s all ease-out;
+    font-size: 150px;
+    color: #f6f7f9;
+    text-transform: uppercase;
+    color: #f6f7f9;
+    font-size: 177px;
+    font-weight: 500;
+    letter-spacing: .5em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    top: 30px;
+    left: 17px;
+    position: relative;
+}

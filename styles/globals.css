@@ -9,12 +9,14 @@
 
     .bgGreen {
         background-color: #41f3b7;
-    
+
     }
-    .fontWeight6{
+
+    .fontWeight6 {
         font-weight: 600;
     }
-    .myTextmd{
+
+    .myTextmd {
         font-size: 25px;
         letter-spacing: 0.1em;
     }
@@ -227,10 +229,4 @@ body {
     font-size: 150px;
     letter-spacing: 40px;
 }
-.bgTitleStatic{
-    transition: 0.2s all ease-out;
-    font-size:150px;
-    letter-spacing: 55px;
-    /* opacity: 1; */
-    color: #f6f7f9;
-}
+

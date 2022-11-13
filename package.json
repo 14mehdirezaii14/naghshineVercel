@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/google-map-react": "^2.1.7",
+    "framer-motion": "^7.6.6",
     "google-map-react": "^2.2.0",
     "gsap": "^3.11.1",
     "next": "12.3.0",

@@ -4,6 +4,7 @@ import styles from '../styles/blog.module.css'
 import gsap from "gsap"
 import { useState, useMemo } from "react"
 import Image from "next/image"
+import HeaderTitle1 from "../components/HeaderTitle1/HeaderTitle1"
 const data = [
     {
         category: 'project',
@@ -70,16 +71,7 @@ const Blog = () => {
     return (
         <div className="container mx-auto">
             {/* head blog */}
-            <div className="headBlog  text-center">
-                <div className="bgTitleStatic">
-                    blog
-                </div>
-                <div className="relative text-center">
-                    <h1 className={`${styles.titleBlogPage} w-full  text-center`}>
-                        FRESH NEWS
-                    </h1>
-                </div>
-            </div>
+            <HeaderTitle1 bgTitle="B,L,O,G" title="F,R,E,S,H   N,E,W,S" />
             {/*  */}
             <div className="grid relative   md:grid-cols-12 sx:grid-cols-1">
                 <div className="sticky col-span-2 ">
