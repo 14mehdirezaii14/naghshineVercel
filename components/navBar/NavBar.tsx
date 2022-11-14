@@ -14,16 +14,20 @@ const NavBar: FunctionComponent<{}> = () => {
     const navElement = useRef<HTMLHeadingElement>(null)
     const navSx = useRef<HTMLHeadingElement>(null)
     const refSpanBtnSx = useRef<any>(null)
-    const scrollEventNavBar = () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        scrollTop > 10 ? gsap.to(navElement.current, { opacity: '1' }) : gsap.to(navElement.current, { opacity: '0' })
-    }
-    useEffect(() => {
-        document.addEventListener("scroll", scrollEventNavBar);
-        return () => {
-            window.removeEventListener("scroll", scrollEventNavBar);
-        };
-    }, [])
+    // const scrollEventNavBar = () => {
+    //     if (router.asPath === '/') {
+    //         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    //         scrollTop > 50 ? gsap.to(navElement.current, { opacity: '1' }) : gsap.to(navElement.current, { opacity: '0' })
+    //         console.log(router)
+    //     }
+    // }
+    // useEffect(() => {
+    //     document.addEventListener("scroll", scrollEventNavBar);
+
+    //     return () => {
+    //         window.removeEventListener("scroll", scrollEventNavBar);
+    //     };
+    // }, [router])
     // 
     const clickMenu = () => {
         let right = navSx.current?.style.right
@@ -33,8 +37,6 @@ const NavBar: FunctionComponent<{}> = () => {
         } else {
             refSpanBtnSx.current?.classList.add('activeSpan')
         }
-        console.log('click')
-        console.log(navSx.current?.style.right)
         right !== "0px" ? gsap.to(navSx.current, { right: 0, duration: 0.5 }) : gsap.to(navSx.current, { right: -300, duration: 0.5 })
     }
     return (

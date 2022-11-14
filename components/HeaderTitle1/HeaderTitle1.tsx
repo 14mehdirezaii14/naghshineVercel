@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { motion } from "framer-motion";
 const HeaderTitle1 = ({ bgTitle, title }: { bgTitle: string, title: string }) => {
     return (
-        <div className="headBlog relative overflow-hidden  text-center">
+        <div className="headBlog mt-10 relative overflow-hidden  text-center">
             <div className={styles.bgTitleStatic}>
                 {bgTitle.split(',').map((word, index) => {
                     return (
@@ -16,7 +16,7 @@ const HeaderTitle1 = ({ bgTitle, title }: { bgTitle: string, title: string }) =>
                                 ease: [0, 0.71, 0.2, 1.01]
                             }}
                             key={index} className={`${styles.bgTitleDiv} inline-block`}>
-                            {word}
+                            {word.toUpperCase()}
                         </motion.div>
                     )
                 })}
@@ -33,7 +33,7 @@ const HeaderTitle1 = ({ bgTitle, title }: { bgTitle: string, title: string }) =>
                             ease: [0, 0.71, 0.2, 1.01]
                         }}
                         key={index} className={`${styles.title} relative overflow-hidden inline-block  text-center`}>
-                        {word}
+                        {word.toUpperCase()}
                     </motion.div>
                 )
             })}
