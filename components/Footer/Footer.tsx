@@ -60,7 +60,7 @@ const Footer = () => {
                         <div>
                             Bite Size @ Montréal headquarter 4267 Boul.Saint-Laurent Suite 100 Montréal, Quebec, Canada H2W 1Z4 <br />
                         </div>
-                        <div>
+                        <div className="overflow-hidden">
                             \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                         </div>
                         <div>

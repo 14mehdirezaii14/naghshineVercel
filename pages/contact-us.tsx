@@ -3,7 +3,7 @@ const Map = dynamic(() => import('../components/Map/Map'), { ssr: false })
 import { motion } from "framer-motion";
 const ContactUs = () => {
     return (
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 ">
             <Map />
             <div className="container mx-auto">
                 <div className="relative flex justify-center text-center">
@@ -19,7 +19,6 @@ const ContactUs = () => {
                                 delay: 0.9,
                                 ease: "anticipate"
                             }}
-
                         >
                             DROP BY AND MAKE SURE TO TAKE THE TIME TO DISCOVER THE NEIGHBOURHOOD!
 
