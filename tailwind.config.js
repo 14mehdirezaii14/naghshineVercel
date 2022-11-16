@@ -12,6 +12,7 @@ module.exports = {
         "BebasNeue": ["Bebas Neue"],
       }
     },
+
     screens: {
       'sx': '320px',
       'sm': '640px',
@@ -29,6 +30,15 @@ module.exports = {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     }
+    ,
+    container: {
+      padding: {
+        sm: '0rem',
+        lg: '10rem',
+        xl: '10rem',
+        '2xl': '10rem',
+      },
+    },
   },
   plugins: [],
 }
