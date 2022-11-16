@@ -22,7 +22,7 @@ const VideoColumn = ({ img }: any) => {
             {showModal ? (
                 <>
                     <div
-                        className="justify-center  items-center w-100 h-100 flex bg-white overflow-x-hidden overflow-y-auto fixed inset-0  outline-none focus:outline-none"
+                        className="justify-center z-20  items-center w-100 h-100 flex bg-white overflow-x-hidden overflow-y-auto fixed inset-0  outline-none focus:outline-none"
                     >
                         <button
                             className={`${styles.modalClose} absolute w-14 h-14 float-right top-16 right-0`}
