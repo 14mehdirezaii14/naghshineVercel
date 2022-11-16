@@ -132,7 +132,7 @@ const Blog = () => {
     }
     const cardVariants: Variants = {
         offscreen: {
-            x: '1000px',
+            x: '0px',
             // opacity: 0,
         },
         onscreen: {
@@ -203,7 +203,7 @@ const Blog = () => {
                                 <div className=" text-gray-500 ">
                                     {category.posts.map((post, index) => {
                                         return (
-                                            <motion.div viewport={{ once: true }} initial="offscreen"
+                                            <motion.div key={index} viewport={{ once: true }} initial="offscreen"
                                                 whileInView="onscreen" >
                                                 <motion.div
                                                     variants={cardVariants}
