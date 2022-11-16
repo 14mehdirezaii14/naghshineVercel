@@ -22,7 +22,6 @@ const BgTitleAnimation = ({ keyUnique, words, dir }: { keyUnique: string, words:
             else if (lazyRootTop.top < 750) {
                 console.log('27')
                 for (let n = 0; n < words.length; n++) {
-
                     gsap.to(`.${words[n]}${keyUnique}${n}`, {
                         opacity: `0.1`,
                         x: `0`,
@@ -30,9 +29,8 @@ const BgTitleAnimation = ({ keyUnique, words, dir }: { keyUnique: string, words:
                     },)
                 }
             }
-        } else {
-            return
         }
+        return
     }
     useEffect(() => {
         document.addEventListener("scroll", scrollEvent);
@@ -41,11 +39,11 @@ const BgTitleAnimation = ({ keyUnique, words, dir }: { keyUnique: string, words:
         };
     }, [])
     return (
-        < div ref={ref} className="flex bgTitle relative " style={{ top: '-50px', marginBottom: '-100px' }} >
+        < div ref={ref} className={`${dir === "rtl" ? 'text-right' : 'text-left'} bgTitle relative `} style={{ top: '-50px', marginBottom: '-100px' }} >
             {
                 words.map((word: any, index: any) => {
                     return (
-                        <div key={index} style={{ transform: 'translate(-2000px, 0px)' }} className={`relative bgTitle${keyUnique} ${word}${keyUnique}${index} bgTitle `}  >
+                        <div key={index} className={`relative inline-block bgTitle${keyUnique} ${word}${keyUnique}${index} bgTitle `}  >
                             {word}
                         </div>
                     )

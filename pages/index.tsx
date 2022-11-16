@@ -108,7 +108,7 @@ const Home: NextPage = () => {
           </div>
           {/*  */}
           <div className="grid grid-cols-1 text-center justify-center">
-            <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} dir={'rtl'} />
+            <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} dir={'ltr'} />
             <div className='z-10'>
             <Link href="#">
                 <a className='btnGreen btnGreen inline' onClick={(e) => homeAnimationChangePage(e, '/contact-us')} >View Project</a>

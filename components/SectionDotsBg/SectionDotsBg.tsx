@@ -11,7 +11,7 @@ const SectionDotsBg = () => {
             }} >
                 <div className='container  mx-auto  relative' >
                     <CanvasDotsBackground />
-                    <BgTitleAnimation keyUnique={'4'} words={['b', 'l', 'o', 'g']} dir={'rtl'} />
+                    <BgTitleAnimation keyUnique={'4'} words={['b', 'l', 'o', 'g']} dir={'ltr'} />
                     <div className='text-white relative md:-top-20 sx:top-0 text-center  grid grid-cols-12 -mb-16'>
                         <div className='md:col-span-4 sx:col-span-12 ' ><p className='text-left' style={{
                             position: 'relative',
