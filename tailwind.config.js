@@ -18,26 +18,21 @@ module.exports = {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
+      'md': '1200px',
       // => @media (min-width: 768px) { ... }
 
-      'lg': '1024px',
+      'lg': '1200px',
       // => @media (min-width: 1024px) { ... }
 
-      'xl': '1280px',
+      'xl': '1200px',
       // => @media (min-width: 1280px) { ... }
 
-      '2xl': '1536px',
+      '2xl': '1200px',
       // => @media (min-width: 1536px) { ... }
     }
     ,
     container: {
-      padding: {
-        sm: '0rem',
-        lg: '12rem',
-        xl: '12rem',
-        '2xl': '13rem',
-      },
+      
     },
   },
   plugins: [],

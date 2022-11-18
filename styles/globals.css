@@ -41,12 +41,13 @@
     }
 
     .bgTitle>div {
-        font-size: 30px !important;
+        font-size: 50px !important;
     }
 
     .bgTitle {
-        top: 0px !important;
-        margin-bottom: 10px !important;
+        top: -50px !important;
+        margin-bottom: -130px !important;
+        z-index: -1;
     }
     #Layer_1{
         position: relative;
