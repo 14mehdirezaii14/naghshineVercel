@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="bg-[#f6f7f9] pt-5">
             <div className="container mx-auto py-5">
 
-                <BgTitleAnimation dir="rtl" keyUnique="4" words={['c', 'o', 'n', 't', 'a', 'c', 't']} />
+                <BgTitleAnimation dir="ltr" className="text-white" keyUnique="4" words={['c', 'o', 'n', 't', 'a', 'c', 't']} />
                 <div className="grid grid-cols-12 relative -top-16">
                     <div className="md:col-span-9 sx:col-span-12">
                         <p className={`${styles.footerLeft}`}>

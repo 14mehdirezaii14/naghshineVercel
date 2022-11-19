@@ -20,6 +20,16 @@ const Home: NextPage = () => {
   const rowRef1 = useRef<HTMLDivElement>(null)
 
   const scrollEvent = () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop >= 70) {
+      gsap.to('.LogoHeadDiv', { scale: 1, opacity: 1, left: '0px', top: '0px' })
+      gsap.to('.navBarElement', { opacity: '1' })
+    } else {
+      gsap.to('.navBarElement', { opacity: '0' })
+      gsap.to('.LogoHeadDiv', { scale: 4.2, opacity: 0, left: '60px', top: '20px' })
+    }
+
+    // <><><><><><><><>
     if (videoColumnRef?.current?.getBoundingClientRect().top) {
       if (videoColumnRef?.current?.getBoundingClientRect().top < 1000) {
         gsap.to(videoColumnRef.current, { opacity: 1, top: 0, duration: 0.5 });
@@ -43,17 +53,7 @@ const Home: NextPage = () => {
       document.removeEventListener("scroll", scrollEvent);
     };
   }, [])
-  // const AnimationChangePage = (e: any, to: string) => {
-  //   e.preventDefault();
-  //   gsap.to('.heroSectionImage', { right: "-800px", duration: 2 })
-  //   gsap.to('.Home', { position: "relative", duration: 0.5 })
-  //   // gsap.to('.Home > span , p, a ', { position: "relative", top: '70px', duration: 0.5 })
-  //   gsap.to('.videoDiv', { right: "800px", duration: 2 })
-  //   gsap.to('.Home', { opacity: 0, duration: 1 })
-  //   setTimeout(() => {
-  //     Router.push(`/${to}`)
-  //   }, 1000)
-  // }
+
   return (
     <>
       <Head>
@@ -110,9 +110,8 @@ const Home: NextPage = () => {
           <div className="grid grid-cols-1 text-center justify-center">
             <BgTitleAnimation keyUnique={'3'} words={['E', '_', 'C', 'O', 'M', 'M', 'E', 'R', 'C']} dir={'ltr'} />
             <div className='z-10'>
-            <Link href="#">
-                <a className='btnGreen btnGreen inline' onClick={(e) => homeAnimationChangePage(e, '/contact-us')} >View Project</a>
-
+              <Link href="#">
+                <a className='btnGreen  btnGreen  inline' style={{ fontSize: '35px' }} onClick={(e) => homeAnimationChangePage(e, '/contact-us')} >Hungry for more?</a>
               </Link>
             </div>
           </div>

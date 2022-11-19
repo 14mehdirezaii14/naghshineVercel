@@ -10,7 +10,7 @@ const CanvasDotsBackground = (props: any) => {
         const rowsize = 50;
         let dotsize: any = 10;
         const dotmin = 2.5;
-        const dotsizebase = 10;
+        const dotsizebase = 8;
         let PosX: any = ''
         let PosY: any = ''
         // Calc 
@@ -51,19 +51,18 @@ const CanvasDotsBackground = (props: any) => {
                 for (let $iy = 4; $iy <= (count); $iy++) {
                     ctx.beginPath();
                     let $scaler = Math.hypot(GlobalX / rowsize - $ix, GlobalY / rowsize - $iy);
-                    dotsize = dotsizebase - $scaler ;
+                    dotsize = dotsizebase - $scaler;
                     if (dotsize < dotmin) {
                         dotsize = 1;
                     }
-                    ctx.arc(rowsize * $ix, rowsize * $iy, dotsize *0.3, 0, 50 * Math.PI);
+                    ctx.arc(rowsize * $ix, rowsize * $iy, dotsize * 0.5, 0, 50 * Math.PI);
+                    // ctx.arc(canvas.width / 2, canvas.height / 2, 100, 0, 2 * Math.PI);
                     $counter = $counter;
                     ctx.strokeStyle = "#41f3b7";
-                    ctx.background = "#41f3b7";
-
-
-                    ctx.lineWidth = 1;
-                    ctx.stroke();
-
+                    ctx.fillStyle = '#41f3b7';
+                    // ctx.lineWidth = 1;
+                    // ctx.stroke();
+                    ctx.fill();
                 }
             }
         }
@@ -80,8 +79,8 @@ const CanvasDotsBackground = (props: any) => {
         }
     }, [])
     return (
-        <canvas className="CanvasDots absolute -z-0 -left-40 -top-36 w-full " style={{
-            left: '-328px',
+        <canvas className="CanvasDots absolute -z-0  -top-40 w-full " style={{
+            left: '-576px',
             width: `${widthPage}px`,
         }}>
         </canvas>

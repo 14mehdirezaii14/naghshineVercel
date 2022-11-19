@@ -2,7 +2,7 @@ import { ClickEventValue } from "google-map-react"
 import dynamic from "next/dynamic"
 import styles from '../styles/blog.module.css'
 import gsap from "gsap"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, Variants } from "framer-motion";
 import Image from "next/image"
 import HeaderTitle1 from "../components/HeaderTitle1/HeaderTitle1"
@@ -127,13 +127,19 @@ const data = [
 ]
 const Blog = () => {
     const [activeTab, setActiveTab] = useState<string>('all')
+    const tabRef = useRef<HTMLUListElement>(null)
     const changeTab = (e: any) => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
         setActiveTab(e.target.classList[3])
     }
     const cardVariants: Variants = {
         offscreen: {
-            x: '0px',
-            // opacity: 0,
+            x: '200px',
+            opacity: 0,
         },
         onscreen: {
             x: 0,
@@ -151,10 +157,19 @@ const Blog = () => {
             <HeaderTitle1 bgTitle="B,L,O,G" title="F,R,E,S,H   N,E,W,S" />
             {/*  */}
             <div className="grid relative   md:grid-cols-12 sx:grid-cols-1">
-                <div className="sticky col-span-2 ">
-                    <ul className="-mb-px text-sm md:overflow-auto md:block   sx:overflow-scroll sx:flex" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
-                        <li onClick={() => setActiveTab('all')} className="mr-2" role="presentation">
-                            <button className={`inline-block px-4 rounded-t-lg ${activeTab === 'all' ? styles.activeTabBlog : null}  ${styles.btnTabBlog}`} id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">all</button>
+                <div className=" col-span-2 ">
+                    <ul ref={tabRef} className="-mb-px md:fixed sm:block  text-sm md:overflow-auto md:block  sx:overflow-scroll sx:flex" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                        <li onClick={() => {
+                            setActiveTab('all')
+                            window.scroll({
+                                top: 0,
+                                left: 0,
+                                behavior: 'smooth'
+                            });
+                        }} className="mr-2" role="presentation">
+                            <button className={`inline-block px-4 rounded-t-lg ${activeTab === 'all' ? styles.activeTabBlog : null}  ${styles.btnTabBlog}`} id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                                all <span className="font-normal text-sm">20</span>
+                            </button>
                         </li>
                         {data.map((category, index) => {
                             return (
@@ -178,7 +193,7 @@ const Blog = () => {
                                                 initial="offscreen"
                                                 whileInView="onscreen"
                                                 variants={cardVariants}
-                                                viewport={{ once: true, amount: 0.1 }}
+                                                viewport={{ once: true }}
                                                 key={index} className="grid sx:grid-cols-1 md:grid-cols-2 gap-12 items-center mt-5">
                                                 <Image width={500} height={500} src={post.image} alt="" />
                                                 <div className="contentPostBlog mt-5">

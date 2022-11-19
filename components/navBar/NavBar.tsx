@@ -1,6 +1,6 @@
 import Image from "next/image"
 import vercel from '../../public/favicon.ico'
-import { useEffect, FunctionComponent, useRef } from "react"
+import { useEffect, FunctionComponent, useRef, useState, useMemo } from "react"
 import { gsap } from 'gsap/dist/gsap'
 // import CSSRulePlugin from "gsap/CSSRulePlugin"
 import Link from "next/link"
@@ -14,37 +14,27 @@ const NavBar: FunctionComponent<{}> = () => {
     const navElement = useRef<HTMLHeadingElement>(null)
     const navSx = useRef<HTMLHeadingElement>(null)
     const refSpanBtnSx = useRef<any>(null)
-    // const scrollEventNavBar = () => {
-    //     if (router.asPath === '/') {
-    //         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    //         scrollTop > 50 ? gsap.to(navElement.current, { opacity: '1' }) : gsap.to(navElement.current, { opacity: '0' })
-    //         console.log(router)
-    //     }
-    // }
-    // useEffect(() => {
-    //     document.addEventListener("scroll", scrollEventNavBar);
+    const [path, setPath] = useState<string>(router.asPath)
 
-    //     return () => {
-    //         window.removeEventListener("scroll", scrollEventNavBar);
-    //     };
-    // }, [router])
-    // 
     const clickMenu = () => {
         let right = navSx.current?.style.right
         let classListSpan = [...refSpanBtnSx.current?.classList]
-        if (classListSpan.includes('activeSpan')) {
-            refSpanBtnSx.current?.classList.remove('activeSpan')
-        } else {
-            refSpanBtnSx.current?.classList.add('activeSpan')
+        if (refSpanBtnSx) {
+            if (classListSpan.includes('activeSpan')) {
+                refSpanBtnSx.current?.classList.remove('activeSpan')
+            } else {
+                refSpanBtnSx.current?.classList.add('activeSpan')
+            }
+            right !== "0px" ? gsap.to(navSx.current, { right: 0, duration: 0.5 }) : gsap.to(navSx.current, { right: -300, duration: 0.5 })
+
         }
-        right !== "0px" ? gsap.to(navSx.current, { right: 0, duration: 0.5 }) : gsap.to(navSx.current, { right: -300, duration: 0.5 })
     }
     return (
         <>
-            <div ref={navElement} className=" fixed shadow-md  py-2 z-50  top-0  left-0 right-0 bg-white">
+            <div ref={navElement} className=" fixed shadow-md navBarElement  py-2 z-50  top-0  left-0 right-0 bg-white">
                 <div className="container mx-auto">
                     {/* logo */}
-                    <div className="float-left">
+                    <div className="float-left LogoHeadDiv scale-1">
                         <Link href='/'>
                             <Image placeholder='blur' blurDataURL='/download-min.jpg' priority width={50} height={50} quality={70} src={vercel} alt="Logo" />
                         </Link>

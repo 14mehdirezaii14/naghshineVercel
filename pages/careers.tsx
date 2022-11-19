@@ -48,6 +48,7 @@ const careers = () => {
                 </div>
             </div>
         </>
+    
     )
 }
 

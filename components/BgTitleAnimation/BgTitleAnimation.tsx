@@ -1,6 +1,11 @@
 import { useRef, useEffect } from "react"
 import gsap from "gsap"
-const BgTitleAnimation = ({ keyUnique, words, dir }: { keyUnique: string, words: string[], dir: string, color?: string }) => {
+
+
+interface bgTitleType { keyUnique: string, words: string[], dir: string, color?: string, className?: string, parentPosition?: string }
+
+
+const BgTitleAnimation = ({ keyUnique, words, dir, className, parentPosition }: bgTitleType) => {
     const ref = useRef<any>(null)
 
     const scrollEvent = () => {
@@ -23,7 +28,7 @@ const BgTitleAnimation = ({ keyUnique, words, dir }: { keyUnique: string, words:
                 console.log('27')
                 for (let n = 0; n < words.length; n++) {
                     gsap.to(`.${words[n]}${keyUnique}${n}`, {
-                        opacity: `0.1`,
+                        opacity: `1`,
                         x: `0`,
                         duration: `1`
                     },)
@@ -39,11 +44,11 @@ const BgTitleAnimation = ({ keyUnique, words, dir }: { keyUnique: string, words:
         };
     }, [])
     return (
-        < div ref={ref} className={`${dir === "rtl" ? 'text-right' : 'text-left'} bgTitle relative `} style={{ top: '-50px', marginBottom: '-100px' }} >
+        < div ref={ref} className={`${dir === "rtl" ? 'text-right' : 'text-left'} bgTitle ${parentPosition === 'absolute' ? 'absolute' : 'relative'} `} style={{ top: '-50px', marginBottom: '-100px', color: '#f6f7f9' }} >
             {
                 words.map((word: any, index: any) => {
                     return (
-                        <div key={index} className={`relative inline-block bgTitle${keyUnique} ${word}${keyUnique}${index} bgTitle `}  >
+                        <div key={index} className={`relative  ${className} opacity-1 inline-block bgTitle${keyUnique} ${word}${keyUnique}${index} bgTitle ${className} `}  >
                             {word}
                         </div>
                     )
