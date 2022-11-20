@@ -16,14 +16,54 @@ export function reportWebVitals(metric: NextWebVitalsMetric) {
 const Loading = dynamic(() => import('../components/Loading/Loading'))
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false)
-  const scrollEvent = (e: any) => {
-    e.preventDefault();
-    e.defaultPrevented = true
-    console.log(e)
+  const scrollEvent = (event: any) => {
+    var delta = 0;
+    if (event.wheelDelta) delta = event.wheelDelta / 40; //controls the scroll wheel range/speed
+    else if (event.detail) delta = -event.detail / 40;
+
+    handle(delta);
+    event.returnValue = false;
+  }
+  var goUp = true;
+  let end: any = null;
+  var interval: any = null;
+  function handle(delta: any) {
+    var animationInterval = 20; //controls the scroll animation after scroll is done
+    var scrollSpeed = 20; //controls the scroll animation after scroll is done
+
+    if (end == null) {
+      end = window.scroll();
+    }
+    end -= 20 * delta;
+    goUp = delta > 0;
+
+    if (interval == null) {
+      interval = setInterval(function () {
+        var scrollTop = window.scrollY;
+        var step = Math.round((end - scrollTop) / scrollSpeed);
+        if (scrollTop <= 0 ||
+          goUp && step > -1 ||
+          !goUp && step < 1) {
+          clearInterval(interval);
+          interval = null;
+          end = null;
+        }
+        window.scroll(0, scrollTop + step);
+      }, animationInterval);
+    }
   }
   useEffect(() => {
     setLoading(true)
-    window.addEventListener('scroll', scrollEvent)
+    setTimeout(() => {
+      // window.addEventListener('wheel', scrollEvent);
+       window.addEventListener('wheel', () => {
+        console.log('eventّ')
+       }, false);
+    }, 1000)
+    return () => {
+      document.removeEventListener("scroll", scrollEvent);
+    };
+
   }, [])
   return (
     <>

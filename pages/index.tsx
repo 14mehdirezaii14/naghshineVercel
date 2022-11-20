@@ -4,9 +4,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import gsap from 'gsap'
-import { Suspense, useEffect, useRef } from 'react'
-import Loading from '../components/Loading/Loading'
-import Router from 'next/router'
+import { useEffect, useRef } from 'react'
 import homeAnimationChangePage from '../AnimationChangePage/homeAnimationChangePage'
 const SvgLogo = dynamic(() => import('../components/svgLogo/SvgLogo'))
 const BgTitleAnimation = dynamic(() => import('../components/BgTitleAnimation/BgTitleAnimation'))
