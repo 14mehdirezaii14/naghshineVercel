@@ -239,7 +239,7 @@ body {
 
 .boxWork:nth-child(odd) {
     position: relative;
-    top: 30px;
+    top: -50px;
 }
 
 /* .boxWork:nth-child(even) {
